@@ -1,0 +1,384 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 2px;
+  }
+  .firstdiv {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(27, 41, 41);
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    box-shadow: 0 0 20px white;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgba(24, 20, 20, 0.987);
+  }
+  .inputdiv {
+    position: relative;
+  }
+  .inputdiv input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .inputdiv label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  .inputdiv input:focus ~ label,
+  .inputdiv input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #bdb9b9;
+    font-size: 12px;
+  }
+  .container a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 5px;
+  }
+  .container a:hover {
+    background: #03f40f;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03f40f, 0 0 25px #03f40f, 0 0 50px #03f40f,
+      0 0 100px #03f40f;
+  }
+  .container a span {
+    position: absolute;
+    display: block;
+  }
+  .container a span {
+    bottom: 2px;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03f40f);
+    animation: BBanimation 2s linear infinite;
+  }
+  @keyframes BBanimation {
+    0% {
+      left: -100%;
+    }
+    50%,
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* secdiv styling */
+
+  .secdiv {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: #fbdb01;
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .seccontainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    box-shadow: 0 0 20px white;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: black;
+  }
+  .secinputdiv {
+    position: relative;
+  }
+  .secinputdiv input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fbdb01;
+    outline: none;
+    background: transparent;
+  }
+  .secinputdiv label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fbdb01;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  .secinputdiv input:focus ~ label,
+  .secinputdiv input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #fbdb01;
+    font-size: 12px;
+  }
+  .seccontainer a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fbdb01;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 5px;
+  }
+  .seccontainer a:hover {
+    background: #fbdb01;
+    border-radius: 5px;
+    color: black;
+    box-shadow: 0 0 5px #fbdb01, 0 0 25px #fbdb01, 0 0 50px #fbdb01,
+      0 0 100px #fbdb01;
+  }
+  .seccontainer a span {
+    position: absolute;
+    display: block;
+  }
+  .seccontainer a span {
+    bottom: 2px;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fbdb01);
+    animation: BBanimation 2s linear infinite;
+  }
+  @keyframes BBanimation {
+    0% {
+      left: -100%;
+    }
+    50%,
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* third div  */
+
+  .thirddiv {
+    text-shadow: 1px 1px red;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+      45deg,
+      #e74c3c 10%,
+      #f1c40f 45%,
+      #3498db 100%
+    );
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .thirdcontainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    box-shadow: 0 0 20px black;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      90deg,
+      #3498db 0%,
+      #e74c3c 50%,
+      #f1c40f 75%,
+      #3498db 100%
+    );
+    animation: sliderbtn 5s linear infinite;
+  }
+  .thirdinputdiv {
+    position: relative;
+  }
+  .thirdinputdiv input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #f1c40f;
+    outline: none;
+    background: transparent;
+  }
+  .thirdinputdiv label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    font-weight: bolder;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  .thirdinputdiv input:focus ~ label,
+  .thirdinputdiv input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .thirdcontainer a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    box-shadow: 0 0px 20px #e74c3c;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 5px;
+  }
+  .thirdcontainer a:hover {
+    background: #b22222;
+    border-radius: 5px;
+    color: white;
+    font-weight: bolder;
+    background-image: linear-gradient(
+      90deg,
+      #3498db 0%,
+      #e74c3c 50%,
+      #f1c40f 75%,
+      #3498db 100%
+    );
+    animation: sliderbtn 2s linear infinite;
+  }
+  @keyframes sliderbtn {
+    to {
+      background-position: 20vw;
+    }
+  }
+  .thirdcontainer a span {
+    position: absolute;
+    display: block;
+  }
+  .thirdcontainer a span {
+    bottom: 2px;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, navy);
+    animation: BBanimation 2s linear infinite;
+  }
+  @keyframes BBanimation {
+    0% {
+      left: -100%;
+    }
+    50%,
+    100% {
+      left: 100%;
+    }
+  }
+</style>
+<div class="firstdiv">
+  <div class="container">
+    <div class="loginbox">
+      <form action="">
+        <div class="inputdiv">
+          <input type="text" required="" />
+          <label for="">Username</label>
+        </div>
+        <div class="inputdiv">
+          <input type="password" required="" />
+          <label for="">Password</label>
+        </div>
+        <center>
+          <a href="#" target="_blank"> Login <span></span></a>
+        </center>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="secdiv">
+  <div class="seccontainer">
+    <div class="secloginbox">
+      <form action="">
+        <div class="secinputdiv">
+          <input type="text" required="" />
+          <label for="">Username</label>
+        </div>
+        <div class="secinputdiv">
+          <input type="password" required="" />
+          <label for="">Password</label>
+        </div>
+        <center>
+          <a href="#" target="_blank"> Login <span></span></a>
+        </center>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="thirddiv">
+  <div class="thirdcontainer">
+    <div class="thirdloginbox">
+      <form action="">
+        <div class="thirdinputdiv">
+          <input type="text" required="" />
+          <label for="">Username</label>
+        </div>
+        <div class="thirdinputdiv">
+          <input type="password" required="" />
+          <label for="">Password</label>
+        </div>
+        <center>
+          <a href="#" target="_blank"> Login <span></span></a>
+        </center>
+      </form>
+    </div>
+  </div>
+</div>
