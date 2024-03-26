@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Intro section with dropdown navigation</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      nav {
+        font-size: 1.2em;
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 30px;
+        margin-right: 125px;
+        margin-top: 35px;
+      }
+      nav img {
+        width: 50%;
+        height: 50%;
+        margin-top: 20px;
+      }
+      nav ol {
+        display: flex;
+        padding-left: 30px;
+        gap: 20px;
+      }
+      nav button {
+        font-size: 0.8em;
+        margin-top: -30px;
+        margin-left: 20px;
+        color: grey;
+        background-color: transparent;
+        border: grey solid 1px;
+        border-radius: 15px;
+        padding: 10px 30px;
+      }
+      nav ol li {
+        list-style: none;
+      }
+
+      #floatLeft {
+        gap: 20px;
+        display: flex;
+      }
+      #floatRight {
+        display: flex;
+      }
+      #floatRigt ol {
+      }
+      section {
+        display: flex;
+        height: 615px;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+      #leftContent {
+        width: 50%;
+        margin-top: 85px;
+      }
+      #leftContent h1 {
+        font-weight: bold;
+        font-size: 5em;
+        line-height: 10px;
+      }
+      #leftContent p {
+        width: 65%;
+        font-size: 1.1em;
+        line-height: 23px;
+        color: grey;
+        margin-bottom: 45px;
+        word-spacing: 10px;
+
+      }
+      #leftContent button {
+        font-size: 1em;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        padding: 20px 45px;
+        margin-bottom: 65px;
+      }
+
+      #rightimg {
+        width: 50%;
+      }
+      #rightimg img {
+        height: 600px;
+      }
+      #leftContentImg {
+        display: flex;
+        height: 60px;
+        gap: 30px;
+      }
+      #leftContentImg img {
+        width: 76%;
+        height: 34%;
+        gap: 10px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="floatLeft">
+          <img src="images/logo.svg" alt="" />
+          <ol>
+            <li>Features</li>
+
+            <li>Company</li>
+            <li>Careers</li>
+            <li>About</li>
+          </ol>
+        </div>
+
+        <div id="floatRight">
+          <ol>
+            <li>Login</li>
+            <li><button>Register</button></li>
+          </ol>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div id="leftContent">
+        <div>
+          <h1>Make</h1>
+          <h1>remote work</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum neque
+            assumenda ipsum, cum error molestias recusandae vero labore. Dicta,
+            impedit.
+          </p>
+          <button>Learn More</button>
+        </div>
+        <div id="leftContentImg">
+          <div>
+            <img src="images/client-databiz.svg" alt="" />
+          </div>
+          <div>
+            <img src="images/client-audiophile.svg" alt="" />
+          </div>
+          <div>
+            <img src="images/client-meet.svg" alt="" />
+          </div>
+          <div>
+            <img src="images/client-maker.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div id="rightimg">
+        <img src="images/image-hero-desktop.png" alt="" />
+      </div>
+    </section>
+  </body>
+</html>

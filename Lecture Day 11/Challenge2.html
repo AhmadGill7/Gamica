@@ -1,0 +1,447 @@
+    <style>
+        
+        *{
+        margin: 0;
+        padding: 0;
+        }
+        header{
+        width: 100vw;
+        height: 10vh;
+        border-bottom: 0.5px solid gainsboro;
+        vertical-align: middle;
+        }
+        header div:nth-child(1){
+        /* float: left;  Display flex my float ni chalta */        
+        display: flex;
+        }
+        header div:nth-child(2){
+        float: right;
+        }
+        .flout button{
+        padding: 15px;
+        background-color: orangered;
+        color: white;
+        border: 0;
+        border-radius: 3px;
+        margin-right: 10px;
+        }
+        .flout{
+        margin-top: 7px;
+        }
+        .flout input{
+        margin-left: 20px;
+        width: 600px;
+        }
+        #phla{
+        position: relative;
+        width: 10%;
+        height: 89vh;
+        border-right: 0.5px solid gainsboro;
+        
+        }
+        #side{
+            display: flex;
+            list-style-type: none;
+            flex-direction: column;
+            height: 100%;
+            margin-top: 5px;
+            
+        }
+        li{
+        flex-grow: 1;
+        justify-content: center;
+        }
+        #side li:nth-child(8){
+        flex-grow: 8;
+        }
+        #slect{
+        display: flex;
+        list-style-type: none;
+        width: 85%;
+        background-color: white;
+        border-radius: 3px;
+        border: 0;
+        margin-top: 10px;
+        margin-left: 52px;
+        
+        }
+    
+        #main{
+        width: 100vw;
+        display: flex;
+        
+    
+        }
+        #second{
+        width: 60vw;
+        height: 89vh;
+        background-color: rgb(245, 240, 240);;
+        }
+    #slect li{
+        margin-left: 15px;
+        
+        line-height: 36px;
+    }
+    #card{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cardimg{
+        width: 50px;
+        height: 50px;
+        border-radius: 70px;
+        margin-top: 15px;
+    }
+    .box{
+        
+        
+        margin-top: 10px;
+        width: 140px;
+        height: 180px;
+        background-color: white;
+        border-radius: 5px;
+        margin-left: 52px;
+    }
+    #third{
+        border-left: 0.5px solid gainsboro;
+    }
+    #operwali{
+        height: 51px;
+        width: 31vw;
+        border: 0.5px solid gainsboro;
+    }
+    #customer{
+        
+        line-height: 33px;
+        width: 30%;
+        background-color: rgb(245, 240, 240);;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+    
+    .span1{
+        color: rgb(186, 183, 183);
+        font-size: 0.8em;
+    }
+        
+        #hib1{
+        margin-left: 8px;
+        width: 95%;
+        
+        line-height: 46px;
+        border-radius: 7px;
+        background-color: rgb(245, 240, 240);;
+        margin-top: 10px;
+        }
+        #one{
+        width: 60px;
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 3px;
+        }
+        #dis{
+        margin-left: 100px;
+        }
+        #qun{
+        margin-left: 40px;
+        }
+        #boxbnao{
+        display: flex;
+        margin-left: 40px;
+        
+        }
+        #bos1{
+        width: 100px;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: white;
+        }
+        #bos2{
+        margin-left: 54px;
+        width: 100px;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: white;
+        margin-bottom: 10px;
+        }
+        #hi{
+        height: 30px;
+        
+        }
+        #hib3{
+            width: 95%;
+            margin-left: 8px;
+            border-left: 2.5px solid green;
+            border-radius: 5px;
+            background-color: rgb(245, 240, 240);
+        
+    
+        }
+        #hib2{
+        line-height: 60px;
+        margin-left: 8px;
+        }
+        #hib4{
+        margin-top: 10px;
+        margin-left: 8px;
+        }
+        #span21{
+        margin-left: 140px;
+        }
+        #span22{
+        margin-left: 177px;
+        }
+        #span23{
+        margin-left: 132px;
+        }
+        #span24{
+        margin-left: 231px;
+        }
+        #border1{
+        display: flex;
+        list-style-type: none;
+        margin-left: 10px;
+        }
+        .border{
+        flex-grow: 1;
+        line-height: 40px;
+        color: orange;
+        }
+        #color{
+        flex-grow: 5;
+        color: black;
+        }
+        #orange{
+        width: 95%;
+        margin-left: 8px;
+        background-color: rgb(242, 232, 214);
+        border-radius: 4px;
+        margin-top: 12vh;
+        } 
+        #last{
+        width: 100%;
+        background-color: rgb(245, 240, 240);;
+        }
+        #inner{
+        line-height: 23px;
+        
+        margin-left: 10px;
+        }
+        #span31{
+        margin-left: 261px;
+        }
+        #span32{
+        margin-left: 292px;
+        }
+        #span33{
+        margin-left: 209px;
+        }
+        #phlab{
+        width: 150px;
+        background-color: rgb(237, 92, 40);
+        padding: 10px;
+        }
+        #dosrab{
+        width: 150px;
+        background-color: rgb(9, 120, 9);
+        padding: 10px;
+        margin-left: 30px;
+        }
+        #side li{
+        margin-left: 28px;
+        }
+        #person{
+        position: absolute;
+        left: 43px;
+        top: 85%;
+        width: 25px;
+        height: 25px;
+        border-radius: 25px;
+        
+        }
+        .innerdiv{
+        margin-left: 33px;
+        }
+        #for{
+        background-color: rgb(245, 240, 240);
+        border-radius: 4px;
+        }
+        </style>
+    </head>
+    <body>
+    
+    
+        <header>
+            <div class="flout">
+                <h1>Restro POS</h1>
+                <input id="for" type="text" placeholder="Search Product.....">
+            </div>
+            <div class="flout">
+                <img src="" alt="">
+                    <img src="" alt="">
+                <button >
+                    Select Table
+                </button>
+                </div>
+        </header>
+    
+    
+        <section id="main">
+            <div id="phla">
+                
+                <ol id="side">
+                    <li>Home</li>
+                    <li>Customer</li>
+                    <li>Tables</li>
+                    <li>Cashier</li>
+                    <li>order</li>
+                    <li>Reports</li>
+                    <li>Settings</li>
+                    <li><img id="person" src="3135715.png" alt=""></li>
+                    <li>Log out</li>
+                </ol>
+            </div>
+            
+            
+            
+            <div id="second">
+                
+                <div>
+                    <ol id="slect">
+                        <li>Starter</li>
+                        <li>Breakfast</li>
+                        <li>Lunch</li>
+                        <li>Supper</li>
+                        <li>Deserts</li>
+                        <li>Beverages</li>
+                    </ol>  
+                </div>
+                
+                
+                
+                <div id="card">
+                        <div class="box">
+                            <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                        Schezwan Egg <br> Noodles
+                        <h3>$24.00</h3>
+                            </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                                </div>
+                    </div>
+                    <div class="box">
+                        <div class="innerdiv"> <img class="cardimg" src="images.jfif.jpeg" alt=""> <br>
+                            Schezwan Egg <br> Noodles
+                            <h3>$24.00</h3>
+                            </div>
+                    </div>   
+                </div>
+            </div>
+            
+            
+            
+            <div id="third">
+                <div id="operwali">
+                    <div id="customer">
+                    + Add Customer
+                    </div>
+                </div>
+                    
+                
+                <div id="dishes">
+                    <div id="hib1"><span class="span1">></span> 1 Schezwan Egg Noodles  <span id="span21">$25.00</span> </div>
+                    <div  id="hib2"><span class="span1">></span> 2 Spicy Shrimp Soup     <span id="span22">$40.00</span></div>
+                    <div  id="hib3"><div id="hi"> <span class="span1"> ^ </span> 1 Thai Style Fried  Noodles <span id="span23">$40.00</span> </div><br> 
+                    <span id="qun">Quantity</span> <span id="dis">Discount</span>
+                    <div id="boxbnao">
+                    <div id="bos1"></div>
+                    <div id="bos2"></div>
+                    </div></div>
+                    <div  id="hib4"> <span class="span1">></span> 3 Fried Basil  <span id="span24">$75.00</span></div>  
+                </div>
+                
+                
+                <div id="orange">
+                    <ol id="border1">
+                        <li class="border" id="color">Add</li>
+                        <li  class="border" >Discount</li>
+                        <li  class="border" >Coupon</li>
+                        <li  class="border" >Code</li>
+                        <li  class="border" >Note</li>
+                    </ol>
+                    </div>
+                    
+                <div id="last">
+                <div id="inner">
+                    Subtotal <span id="span31">$200.00</span> <br>
+                    Tax <span id="span32">$45.00</span><br>
+                    Payable Amount <span id="span33">$195.00</span><br>
+                    <button id="phlab">Hold Order</button>
+                    <button id="dosrab">Procees</button>
+                </div>
+                </div>
+                
+            </div>
+        </section>
+    </body>

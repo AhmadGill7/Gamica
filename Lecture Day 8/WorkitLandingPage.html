@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: lightgreen;
+    }
+    #main {
+      border: 1px solid black;
+      display: flex;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+      height: 400px;
+      width: 300px;
+      background-color: rgb(168, 149, 120);
+      box-shadow: 0 0 40px 20px rgb(38, 31, 31);
+      border-radius: 8%;
+      position: relative;
+    }
+    button {
+      background-color: rgb(162, 162, 223);
+      border: 1px solid black;
+      margin-left: 20px;
+      height: 50px;
+      width: 50px;
+      border-radius: 10px;
+    }
+    #Zunair {
+      bottom: 0;
+      left: 20%;
+      height: 150px;
+      position: absolute;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <div id="malik">
+        <img id="Zunair" src="rocket.png.jpeg" alt="" />
+      </div>
+      <button onclick="moveRocket()" type="button">Start rocket</button>
+    </div>
+    <script>
+      let direction = "top";
+      function moveRocket() {
+        setInterval(() => {
+          if (direction == "top") {
+            let topside = parseInt(Zunair.style.bottom || 0);
+            Zunair.style.bottom = topside + 1 + "px";
+          }
+        }, 50 * Math.random());
+      }
+    </script>
+  </body>
+</html>

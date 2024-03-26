@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Newsletter Signup Page</title>
+
+    <style>
+      body {
+        background-color: #36384d;
+        color: #252745;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #box {
+        height: 380px;
+        width: 550px;
+        border: 1px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 20px;
+      }
+      #imgMain {
+        height: 350px;
+        margin-right: 15px;
+        filter: brightness(120%);
+      }
+      #content {
+        margin-left: 4%;
+        font-size: 0.7em;
+        font-weight: 500;
+      }
+      h1 {
+        font-weight: 6000;
+        font-size: 30px;
+        margin-top: -10px;
+      }
+      .list img {
+        width: 10px;
+        height: 10px;
+      }
+      #list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: middle;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      #mail {
+        font-weight: bold;
+        font-size: smaller;
+      }
+      input {
+        /* padding: 15px 40px; */
+        width: 240px;
+        height: 40px;
+        margin-bottom: 10px;
+        font-size: small;
+        border-radius: 7px;
+        border: 0.5px #252745 solid;
+        padding-left: 10px;
+      }
+      input::placeholder {
+        color: #252745;
+        position: absolute;
+        font-size: small;
+        left: 10px;
+      }
+      button:hover {
+        background-color: #f57f6dd0;
+        color: #36384d;
+        cursor: pointer;
+      }
+      button {
+        padding: 13px 54px;
+        font-size: smaller;
+        font-weight: bold;
+        border-radius: 8px;
+        background-color: #36384d;
+        color: white;
+        border: #36384d 0.5px solid;
+      }
+
+      .attribution {
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+        color: whitesmoke;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(71, 82%, 58%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="content">
+        <h1>Stay updated!</h1>
+        <p>join 60,000+ product managers recieving monthley updates on:</p>
+
+        <div id="list">
+          <div class="list" id="a">
+            <img src="assets/images/icon-list.svg" alt="" /> Product discovery
+            and building what matters
+          </div>
+          <div class="list" id="b">
+            <img src="assets/images/icon-list.svg" alt="" /> Measuring to ensure
+            updates are a sucess
+          </div>
+          <div class="list" id="c">
+            <img src="assets/images/icon-list.svg" alt="" /> and much more!
+          </div>
+        </div>
+        <p id="mail">Email adress</p>
+        <input type="text" placeholder="email@company.com" />
+        <div>
+          <button>Subscribe to monthley Newsletter</button>
+        </div>
+      </div>
+      <div>
+        <img
+          id="imgMain"
+          src="assets/images/illustration-sign-up-desktop.svg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a target="_blank" href="https://www.instagram.com/vortex.xxii/"
+        >Muhammad Ahmad</a
+      >.
+    </div>
+  </body>
+</html>

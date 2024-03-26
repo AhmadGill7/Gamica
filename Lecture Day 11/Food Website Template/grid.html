@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Practice</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    #parent {
+      gap: 10px;
+      display: grid;
+      width: 100vw;
+      height: 100vh;
+      grid-template:
+        "a1 a1 a2 a3 a3"
+        "a4 a4 a2 a5 a5";
+    }
+    .child:nth-child(1) {
+      grid-area: a1;
+      background-color:purple;
+    }
+    .child:nth-child(2) {
+      grid-area: a2;
+      background-color: red;
+    }
+    .child:nth-child(3) {
+      grid-area: a3;
+      background-color: yellow;
+    }
+    .child:nth-child(4) {
+      grid-area: a4;
+      background-color: blue;
+    }
+    .child:nth-child(5) {
+      grid-area: a5;
+      background-color: orange;
+    }
+  </style>
+  <body>
+    <div id="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </body>
+</html>

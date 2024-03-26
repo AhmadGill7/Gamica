@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Query</title>
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/menu-cheese.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Baloo 2", sans-serif;
+      color: rgb(234, 248, 245);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .m-menu {
+        display: block !important;
+      }
+      .d-menu {
+        display: none !important;
+      }
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      background-color: darkolivegreen;
+      height: 70px;
+    }
+    ol {
+      flex-grow: 1;
+
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+    .m-menu {
+      display: none;
+    }
+    li:nth-child(1) {
+      flex-grow: 7;
+    }
+
+    li {
+      text-align: center;
+      box-sizing: border-box;
+      flex-grow: 1;
+    }
+  </style>
+  <body>
+    <header>
+      <ol>
+        <li></li>
+        <li class="d-menu">home</li>
+        <li class="d-menu">Dashboard</li>
+        <li class="d-menu">Login</li>
+        <li class="d-menu">Profile</li>
+        <li class="d-menu">about us</li>
+        <li class="d-menu">download</li>
+        <li class="m-menu"><i class="gg-menu-cheese"></i></li>
+      </ol>
+    </header>
+  </body>
+</html>

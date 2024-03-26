@@ -1,0 +1,20 @@
+
+<style>
+
+#box{
+    width: 200px;
+    height: 300px;
+    border: 1px solid red;
+
+    /* agar aapke sentence m spaces nahi hen aur aap text ko wrap krna cahhte hen */
+    /* to line-break ko use karenge */
+    line-break: anywhere;
+}
+
+</style>
+
+
+<div id="box">
+
+adasjdsajdaskldjaskldjaskldasjkdlasjkdlasjdklasjdasldjaskldjasldjaskldasjkdasjkdasjkdjak
+</div>

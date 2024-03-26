@@ -1,0 +1,213 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+@media screen and (max-width: 1200px) {
+  .content {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.main {
+  background-color: #f5f4f4;
+  height: 100vh;
+}
+.bodyofpage {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.leftpage {
+  position: absolute;
+  width: 33%;
+  height: 87%;
+  background-color: #5c0067;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  left: -171px;
+}
+.rightpage {
+  position: absolute;
+  width: 39%;
+  bottom: 0;
+  height: 87%;
+  background-color: #e7e7e7;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  right: -230px;
+}
+.content {
+  top: 10%;
+  display: flex;
+  align-items: center;
+  width: 69vw;
+  height: 100%;
+  left: 18%;
+  z-index: 1;
+}
+
+.mobilebody {
+  box-shadow: 0px 0px 20px black;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  width: 43%;
+  border-radius: 35px;
+  box-sizing: border-box;
+  background-color: white;
+}
+.mobile {
+  border-radius: 25px;
+  /* overflow: hidden; */
+  position: relative;
+  width: 93%;
+  height: 95%;
+  box-sizing: border-box;
+}
+.dynamicisland {
+  background-color: white;
+  width: 62%;
+  height: 37px;
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 17%;
+  border-radius: 20px;
+}
+.chathead img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+.chathead h4 {
+  font-size: medium;
+  font-weight: 150;
+}
+.chathead p {
+  font-size: 11px;
+}
+.chathead {
+  padding-top: 25px;
+  box-sizing: border-box;
+  height: 14%;
+  width: 100%;
+  background-image: linear-gradient(45deg, #00d4ff, #5c0067);
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  border-radius: 4%;
+  padding-left: 17px;
+}
+.container {
+  padding-top: 10px;
+  height: 84%;
+  background-color: #f5f3f8;
+  font-size: smaller;
+}
+.chat {
+  font-size: 12px;
+  margin: 0px 10px;
+  margin-bottom: 10px;
+  padding: 1px 6px;
+  border-radius: 5px;
+  background-color: #d1d1d17d;
+  text-align: right;
+  width: 60%;
+  color: #5c0067;
+}
+
+.rightmsj:nth-child(3) {
+  height: 48px;
+  background-color: transparent;
+}
+.rightmsj {
+  float: right;
+}
+.leftmsj {
+  clear: both;
+  text-align: left;
+}
+.dogimg img {
+  margin-inline: 3px;
+  height: 100%;
+  border-radius: 5px;
+}
+.disc {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+.disccontent h1 {
+  color: #3b2650;
+  margin-bottom: 25px;
+}
+.disccontent p {
+  color: #adadaf;
+  line-height: 200x;
+}
+.disccontent {
+  width: 70%;
+}
+.price {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(45deg, #5c0067, #00d4ff 100%);
+  width: 70%;
+  height: 45px;
+  margin: 0px 10px;
+  margin-bottom: 10px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+}
+.price input {
+  margin-right: 7px;
+}
+.price label {
+  flex-grow: 3;
+}
+.price h2 {
+  font-weight: lighter;
+}
+.input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding-inline: 20px;
+  height: 40px;
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.input input {
+  border: none;
+  height: 100%;
+  width: 80%;
+}
+.input .round {
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(2, 2, 37);
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Nav Bar</title>
+</head>
+<style>
+    body {
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        background-color: black;
+        color: white;
+        width: 80%;
+        margin: auto;
+        position: relative;
+    }
+
+    ol {
+        list-style: none;
+        width: fit-content;
+        margin: auto;
+        padding: 0;
+    }
+
+    li.header {
+        padding-inline: 10px;
+        display: inline-block;
+        margin: auto;
+        vertical-align: middle;
+        line-height: 50px;
+    }
+
+    li.header:first-child {
+        border-top: 50px solid black;
+        border-left: transparent 50px solid;
+        border-right: transparent 50px solid;
+        position: absolute;
+        left: -50px;
+
+    }
+
+    li.header:last-child {
+        border-top: 50px solid black;
+        border-left: transparent 50px solid;
+        border-right: transparent 50px solid;
+        position: absolute;
+        right: -50px;
+
+    }
+    .section {
+        list-style: lower-alpha;
+    }
+    Section {
+        width: fit-content;
+        margin: auto;
+    }
+</style>
+<!-- <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    ol {
+        position: relative;
+        width: fit-content;
+        margin: auto;
+        list-style: none;
+    }
+
+    ol li {
+        line-height: 45px;
+        padding-inline: 20px;
+        display: inline-block;
+    }
+
+    header {
+        background-color: rgba(0, 0, 0, 0.685);
+        color: white;
+        width: 80%;
+        margin: auto;
+    }
+
+    li:first-child {
+        border-left: 26px solid transparent;
+        border-right: 24px solid transparent;
+        border-top: 45px solid black;
+        position: absolute;
+        left: -112px;
+    }
+
+    li:last-child {
+        border-left: 26px solid transparent;
+        border-right: 24px solid transparent;
+        border-top: 45px solid black;
+        position: absolute;
+        right: -112px;
+    }
+</style> -->
+
+<body>
+    <header>
+        <ol>
+            <li class="header"></li>
+            <li class="header">Apple</li>
+            <li class="header">Banana</li>
+            <li class="header">Mango</li>
+            <li class="header">Orange</li>
+            <li class="header">Grapes</li>
+            <li class="header"></li>
+        </ol>
+    </header>
+    
+    <section>
+        <table id="sectionTable" cellpadding="20px" style="border: 10px red dotted;">
+            <tr>
+                <th>adsf</th>
+                <th>aksf</th>
+                <th>akusuf</th>
+            </tr>
+            <tr>
+                <td>asf</td>
+                <td>fdasf</td>
+                <td>dsgrg</td>
+
+            </tr>
+        </table>
+    </section>
+    <!-- 
+<header>
+    <nav>
+        <ol>
+            <li></li>
+            <li>Best Sellers</li>
+            <li>Gift Ideas</li>
+            <li>New Releases</li>
+            <li>Today's Deals</li>
+            <li>Customer Service</li>
+            <li></li>
+        </ol>
+    </nav>
+</header> -->
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+
+
+<style>
+
+#box{
+    position: relative;
+    border: 1px solid red;
+    width: 500px;
+    height: 500px;
+}
+
+#box img{
+    width: 100%;
+    height: 100%;
+}
+
+
+#content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    top: 0;
+    bottom: 0;
+    height: fit-content;
+    color: white;
+    background-color: rgb(128 128 128 / 50%);
+    padding: 16px;
+    border-radius: 28px;
+}
+
+</style>
+
+<div id="box">
+    <img src="newYear.webp" alt="">
+
+    <div id="content">
+        <h1>Faisalabad</h1>
+        <h2>The Textile Hub</h2>
+    </div>
+
+</div>
