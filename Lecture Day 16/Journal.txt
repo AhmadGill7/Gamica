@@ -1,6 +1,0 @@
-Ive Started this course in the first week of march 2024 and today is 26th march 2024
-We have learned about git and github today
-ive made a desktop github account 
-i learnt about how to make a git usind CMD github desktop and github web
-i m looking forward to learn more about these things.
-I m going to commit this file as my final commit in this repo for today (Lecture day 16)
