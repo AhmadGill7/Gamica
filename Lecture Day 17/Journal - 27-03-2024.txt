@@ -1,0 +1,12 @@
+Ive Started this course in the first week of march 2024 and today is 27th march 2024
+We have learned more about git and github today
+weve learned about github branches, creating branches, publishing branches, pages,
+ how to online a web through pages,
+and what are some of the possible errors in that, mergins two branches and what to 
+keep in mind while merging the branches to main branch.
+its 11 02 am now and the lecture is still pending while i am working on this journal 
+all the other students are strugling to make a page online
+what ive done 3 days ago and just revised it today (but ive learned some more things today).
+meanwhile i helped a fellow student to make a webpage online through github.com.
+and a strange thing in all this that a fellow female student is watching makeup totural and youtube shorts while
+she should be doing practice to make pages online or merging branches /* Strange :D*/.
