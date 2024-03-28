@@ -1,8 +1,34 @@
+<!-- <script>
+//   alert("Lets check your email Adress");
+//   let email = prompt("Enter Your Mail");
+
+
+  let b = "Ali baba";
+  
+//   let sliceb = b.slice(0, 5);
+//   alert(sliceb);
+  let v =b.substr(0, 5);
+  alert(v);
+</script> -->
+
 <script>
-  alert("Lets check your email Adress");
-  let email = prompt("Enter Your Mail");
+  let money = prompt("How Much Money Do You have");
 
+  let menu;
 
-
-  alert(email)
+  //   let biryani = 200;
+  //   let chicken = 140;
+  //   let kabab = 70;
+  if (isNaN(money)) {
+    menu = "wrong data";
+  } else if (money >= 200) {
+    menu = "Biryani, Chicken, Kabab";
+  } else if (money >= 140) {
+    menu = "Chicken Salan, Kabab";
+  } else if (money >= 70) {
+    menu = "Kabab";
+  } else {
+    menu = "Allah Pala Kry Tera v Ty Mera v";
+  }
+  alert(menu);
 </script>
