@@ -106,7 +106,7 @@
 // let some = "122.33.712.31.456.19.378";
 
 // let items = some.split('.')
-// console.log(items)
+// // console.log(items)
 // for(let item of items){
 //   let s1 = '';
 //   let nums =  item.split('');
@@ -117,7 +117,7 @@
 //       s1 += ch;
 //   }
 
-//   console.log(nums)
+// //   console.log(nums)
 //       str +=  s1 + ".";
 // }
 
@@ -156,3 +156,9 @@
 // sentence.match(/(\d+)/g).reduce(function dfgdf(a,b){
 //     return +a + +b;
 // })
+
+let some = "122";
+let b = some.split("");
+let sum = b.reduce((acc, curr) => +acc + +curr);
+
+console.log("Sum of all indexes:", sum);

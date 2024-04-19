@@ -1,0 +1,222 @@
+<script>
+
+
+    //   let dashes = 0;
+    //   let peracentage = 0;
+
+    //   let str = "--- %% ** @@@@@";
+
+      // dashes(3 hojyega)
+      // peracentage (2 hojyega)
+
+
+  //     let data = "### # ### ## ####";
+
+  //   let a =   data.replace( /#+/g, function (matchHogyi){
+  //         return matchHogyi.length
+  //     } )
+
+  //     console.log(a)
+
+      // let str = '';
+
+      // let items = data.split(' ');
+      // console.log(items);
+
+      // // of wala loop kisi list me se aik aik krke item ko nikalne keliye use hota h
+      // // list ki pechan [ ]
+      // for(let a1 of items){
+      //     str += a1.length + " ";
+      //     // console.log(a1.length)
+      // }
+
+      // console.log( str);
+
+
+      //    "3 1 3 2 4"
+
+      // "string"
+
+      // let sentence = "i like apple, do you like apple";
+
+      // let puraniValue =  prompt("old value btyen");
+
+      // let newFruit = prompt("fruit btyen");
+      // slice--kisi string m se koi specific part bahar nikalna
+      // sentence.slice( jahan_se_start_krna_uska_index,  jahan_se_start_krna_uska_index + jitne_letter_chahiye)
+
+      // immutable se murad old waley ko change nahi krna
+      // new data create krdena
+      // let some =sentence.replaceAll(puraniValue, newFruit)
+      // console.log(some)
+      // <button onclick="vowelsCheckKaro()">check</button>
+
+  // alag se agar JS file pari hui h to usko bhi html page m include kar skate hen
+
+
+  // internal-scripting/inpage scripting
+
+
+      // task#1
+      // range kay andr se wo number nikalne hn jo prime nahi hn
+
+      // task#2
+      // number sequence m jo bhi prime numbers hn unko sum krlena h
+      // let a  =   "22.13.82.12.17";
+      // result --> "22.4 .82.12.8"
+
+
+    //   function rangeWalePrime(start,end){
+    //       for (let i = start; i >=end; i++) {
+                
+    //               let res=checkPrime(i);
+    //               console.log(res, i)
+    //         }
+    //     }
+        
+    //     let a = rangeWalePrime(20, 55)
+
+
+    //   let res=checkPrime(number);
+    //   console.log(res)
+
+    //   function checkPrime(num){
+    //       let primeH =  true;
+    //       for(let i = 2; i<num;i++){
+    //           if(num % i == 0){
+    //               primeH = false;
+    //               // loop ko running kay darmian terminate krna h to break ka word use kren
+    //               break;
+    //           }
+    //       }
+    //        return primeH;
+    //   }
+
+
+
+      // console.log(primeH)
+
+      // 7
+      // 7 % 2 1
+      // 7 % 3 1
+      // 7 % 4 4
+      // 7 % 5 2
+      // 7 % 6 1
+
+
+      // 8-even-not prime
+
+      // 8%2 = 0 (fail)
+
+      // 6-even-not prime
+
+      // 6%2 = 0 (fail)
+
+
+
+      // prime number wo jo siraf khud se divide hota h
+      // 2,3,5,7, 13, 17
+
+
+      // let res = getEven(11, 98);
+      // console.log(res);
+
+      // function getEven(start, end) {
+      //     let st = '';
+      //     for (let i = start; i <= end; i++) {
+      //         let status = i % 2;
+      //         if (status != 0) {
+      //             st += i + ',';
+      //         }
+      //     }
+      //     return st;
+      // }
+
+      // text to speech
+
+
+      // function vowelsCheckKaro() {
+
+      //     let data = prompt('enter sentence');
+      //     let result = calculateVowels(data);
+      //     console.log(result);
+
+      // }
+
+      // let aa = calculateVowels("how are you");
+
+      // function calculateVowels(ab) {
+      //     let totalVowels = 0;
+      //     let vowels = 'aeiou';
+
+      //     for (let ch of ab) {
+      //         if (vowels.includes(ch)) {
+      //             totalVowels++;
+      //         }
+      //     }
+      //     return totalVowels;
+      // }
+
+
+
+
+
+      
+  //   let data = "--- %% ** @@@@@";
+  //   let sliceddata = data.split(" ");
+  //   let dashes = "";
+  //   let percentages = "";
+  //   let histerics = "";
+  //   let at = "";
+
+  //   for (const i of sliceddata) {
+  //      if(i.includes('-')){
+  //         dashes = i.length;
+  //      }else if(i.includes('%')){
+  //         percentages = i.length;
+  //      }else if(i.includes('*')){
+  //         histerics = i.length;
+  //      }else{
+  //         at = i.length
+  //      }
+  //   }
+
+  //   console.log(
+  //     "There are " +
+  //       dashes +
+  //       " Dashes" +
+  //       " , and " +
+  //       percentages +
+  //       " Percentages" +
+  //       " and " +
+  //       histerics +
+  //       " histerics" +
+  //       " and " +
+  //       at +
+  //       " ats"
+  //   );
+
+  // let dashes = 0;
+  // let peracentage = 0;
+  // let steric = 0;
+  // let rate = 0;
+
+  // let str = "--- %% * @@@@@";
+
+  // for (let item of str) {
+  // //   console.log(item.length);
+  //   if (item === "-") {
+  //     dashes++;
+  //   } else if (item.includes("%")) {
+  //     peracentage++;
+  //   } else if (item === "*") {
+  //     steric++;
+  //   } else if (item === "@") {
+  //     rate++;
+  //   }
+  // }
+  // console.log(dashes);
+  // console.log(peracentage);
+  // console.log(steric);
+  // console.log(rate);
+</script>
