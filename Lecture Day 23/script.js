@@ -70,20 +70,26 @@
 // }
 // console.log(student.degree)
 
-let a = "This website is for losers LOL!";
-let b = disemvowel(a);
-console.log(b);
-function disemvowel(str) {
-  let vovels = "aeiouAEIOU";
-  let res = "";
-  let string = str.split("");
-  for (i = 0; i > string.length; i++) {
-    if (string[i].includes(vovels)) {
-      let some = string[i]
-      res += ssome.replaceAll(some," ");
-    }
-    return res;
-  }
+// let a = "This website is for losers LOL!";
+// let b = disemvowel(a);
+// console.log(b);
+// function disemvowel(str) {
 
-  return str;
-}
+// }
+// let threeTrues = [true, true, false,true, false, true, false];
+// let x = countTrue(threeTrues);
+// console.log(x);
+
+// function countTrue(arr) {
+//   a = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] == true) {
+//       a++;
+//     }
+//   }
+//   return a;
+// }
+
+// function nextEdge(side1, side2) {
+// 	return (side1 + side2) -1;
+// }
