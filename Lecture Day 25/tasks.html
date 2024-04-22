@@ -1,0 +1,122 @@
+<!-- <p>
+  In a small town the population is p0 = 1000 at the beginning of a year. The
+  population regularly increases by 2 percent per year and moreover 50 new
+  inhabitants per year come to live in the town. How many years does the town
+  need to see its population greater than or equal to p = 1200 inhabitants?
+  <br />
+
+  At the end of the first year there will be: 1000 + 1000 * 0.02 + 50 => 1070
+  inhabitants
+  <br />
+  At the end of the 2nd year there will be: 1070 + 1070 * 0.02 + 50 => 1141
+  inhabitants (** number of inhabitants is an integer **)
+  <br />
+
+  At the end of the 3rd year there will be: 1141 + 1141 * 0.02 + 50 => 1213
+
+  <br />
+  It will need 3 entire years. More generally given parameters:
+  <br />
+
+  p0, percent, aug (inhabitants coming or leaving each year), p (population to
+  equal or surpass)
+
+  <br />
+  the function nb_year should return n number of entire years needed to get a
+  population greater or equal to p.
+  <br />
+
+  aug is an integer, percent a positive or null floating number, p0 and p are
+  positive integers (> 0)
+  <br />
+
+  Examples: nb_year(1500, 5, 100, 5000) -> 15 nb_year(1500000, 2.5, 10000,
+  2000000) -> 10 Note: Don't forget to convert the percent parameter as a
+  percentage in the body of your function: if the parameter percent is 2 you
+  have to convert it to 0.02.
+  <br />
+
+  There are no fractions of people. At the end of each year, the population
+  count is an integer: 252.8 people round down to 252 persons.
+  <br />
+</p>
+
+<script>
+    let x = nbYear(1000, 2.0, 50, 1214);
+    console.log(x)
+  // pop , percentage, avg pop increase, total pop targeted
+  function nbYear(p0, percent, aug, p) {
+    let n = 1;
+    let incrimentRate = percent / 100;
+    let newPop = p0 + p0 * incrimentRate + aug;
+    while (newPop <= p) {
+      newPop = newPop + newPop * incrimentRate + aug;
+      n++;
+    }
+    return n;
+  }
+</script> -->
+<!--.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.-->
+<!-- Task 2 -->
+<!-- <p>
+  If we list all the natural numbers below 10 that are multiples of 3 or 5, we
+  get 3, 5, 6 and 9. The sum of these multiples is 23.
+  <br />
+
+  Finish the solution so that it returns the sum of all the multiples of 3 or 5
+  below the number passed in.
+  <br />
+
+  Additionally, if the number is negative, return 0.
+  <br />
+
+  Note: If the number is a multiple of both 3 and 5, only count it once.
+</p>
+let x = solution(2);
+console.log(x);
+function solution(number) {
+    let sum = 0;
+    for (let i = 1; i < number; i++) {
+        if (i % 3 == 0 || i % 5 == 0) {
+            sum += i;
+        }
+        
+    }
+    return sum;
+} -->
+
+<script>
+  //   function isTriangle(a, b, c) {
+  //     let res = true;
+  //     if (a > b + c || b > a + c || c > a + b) {
+  //       res = true;
+  //     } else {
+  //       res = false;
+  //     }
+  //     return res;
+  //   }
+  let x = "hello worlds";
+  console.log(x.charAt(2).repeat(2));
+  let y = accum(x);
+  console.log(y);
+  function accum(s) {
+    let newStr = "";
+    for (let i = 0; i > s.length; i++) {
+      newStr += s.charAt(i).repeat(i);
+    }
+    return newStr;
+  }
+</script>
