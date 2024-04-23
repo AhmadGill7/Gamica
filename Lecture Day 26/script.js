@@ -1,14 +1,14 @@
-// let arr = [1, 2, 3, 4, 5, 6, 7,2];
 // let x = multiply(arr);
 // console.log(x)
 // function multiply(...num){
-
-//     let total = 1;
-//     for(let i of arr){
-//         total *= +i;
-//     }
+    
+    // let arr = [1, 2, 3, 4, 5, 6, 7,2];
+    // let total = 1;
+    // for(let i of arr){
+    //     total *=    i;
+    // }
+    // console.log(total)
 //     console.log(arr)
-//     console.log(total)
 //     // return total;
     
     
@@ -32,36 +32,17 @@ let students = [
   },
 ];
 function removeSubject() {
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // let name = prompt("Enter students name")
-
-    //   let studentname = prompt("Enter the students name");
-    //   let studentMilgya = students.find(function (student) {
-    //     if (student.name == studentname) {
-    //       return true;
-    //     }
-    //   });
-    //   if (studentMilgya) {
-    //     let newSubject = prompt("enter the subject");
-    //     let index = students.subjects.indexOf(newSubject);
-    //     console.log(index)
-    //   }
+      let studentname = prompt("Enter the students name");
+      let studentMilgya = students.find(function (student) {
+        if (student.name == studentname) {
+          return true;
+        }
+      });
+      if (studentMilgya) {
+        let newSubject = prompt("enter the subject");
+        let index = studentMilgya.subjects.indexOf(newSubject);
+        studentMilgya.subjects.splice(index,1);   
+    }
     }
 
 // function addSubject(){
