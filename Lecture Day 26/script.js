@@ -17,33 +17,33 @@
 
 
 
-let students = [
-  {
-    name: "ali",
-    subjects: ["english", "chemistry", "physics"],
-  },
-  {
-    name: "rameez",
-    subjects: ["PStudies", "english", "maths"],
-  },
-  {
-    name: "aqsa",
-    subjects: ["biology", "zoology", "chemistry"],
-  },
-];
-function removeSubject() {
-      let studentname = prompt("Enter the students name");
-      let studentMilgya = students.find(function (student) {
-        if (student.name == studentname) {
-          return true;
-        }
-      });
-      if (studentMilgya) {
-        let newSubject = prompt("enter the subject");
-        let index = studentMilgya.subjects.indexOf(newSubject);
-        studentMilgya.subjects.splice(index,1);   
-    }
-    }
+// let students = [
+//   {
+//     name: "ali",
+//     subjects: ["english", "chemistry", "physics"],
+//   },
+//   {
+//     name: "rameez",
+//     subjects: ["PStudies", "english", "maths"],
+//   },
+//   {
+//     name: "aqsa",
+//     subjects: ["biology", "zoology", "chemistry"],
+//   },
+// ];
+// function removeSubject() {
+//       let studentname = prompt("Enter the students name");
+//       let studentMilgya = students.find(function (student) {
+//         if (student.name == studentname) {
+//           return true;
+//         }
+//       });
+//       if (studentMilgya) {
+//         let newSubject = prompt("enter the subject");
+//         let index = studentMilgya.subjects.indexOf(newSubject);
+//         studentMilgya.subjects.splice(index,1);   
+//     }
+//     }
 
 // function addSubject(){
 
