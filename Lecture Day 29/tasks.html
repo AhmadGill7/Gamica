@@ -1,0 +1,45 @@
+<style>
+  #truck {
+    transform: scale(-1, 1);
+    width: 150px;
+    position: absolute;
+    margin-top: 50px;
+  }
+</style>
+<img id="truck" src="4.jpg" />
+<button onclick="down()">left</button>
+<button>right</button>
+<button>top</button>
+<button>bottom</button>
+<script>
+  // let direction = "right";
+  // let counter = 0;
+  // let meriKey = setInterval(function () {
+  //   if (direction == "right") {
+  //     truck.style.left = truck.offsetLeft + 2 + "px";
+  //   } else {
+  //     truck.style.left = truck.offsetLeft - 2 + "px";
+  //   }
+  //   let rightSide = truck.offsetLeft + truck.offsetWidth;
+  //   if (rightSide >= window.innerWidth) {
+  //     direction = "left";
+  //     counter++;
+  //   } else if ((truck.offsetLeft <= 0)) {
+  //     direction = "right";
+  //   }
+  //   if(counter==3){
+  //     clearInterval(meriKey)
+  //   }
+  // }, 1);
+
+  function down() {
+   let down = setInterval(function () {
+        truck.style.top = truck.offsetTop + 2 + "px";
+    }, 1);
+        let bottom = truck.offsetTop + truck.offsetHeight;
+
+    if (bottom >= window.innerHeight) {
+      clearInterval(down)
+    } 
+  }
+</script>

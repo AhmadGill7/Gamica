@@ -1,0 +1,144 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  #box {
+    background-color: orange;
+    width: 10em;
+    height: 10em;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  #mainbody {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+  }
+  .boxes {
+    width: 33%;
+  }
+  /* #box1 {
+    background-color: orange;
+  }
+  #box2 {
+    background-color: blue;
+  }
+  #box3 {
+    background-color: pink;
+  }
+  #box4 {
+    background-color: black;
+  }
+  #box5 {
+    background-color: red;
+  }
+  #box6 {
+    background-color: magenta;
+  } */
+</style>
+<body id="mainbody" class="main" onmouseover="changebgcolor()">
+  <div id="box1" class="boxes"></div>
+  <div id="box2" class="boxes"></div>
+  <div id="box3" class="boxes"></div>
+  <div id="box4" class="boxes"></div>
+  <div id="box5" class="boxes"></div>
+  <div id="box6" class="boxes"></div>
+  <!-- <div id="box" onmouseover="changecolor()" onmouseout="changecolor()"></div> -->
+</body>
+<script>
+  //   function changecolor() {
+  //     console.log(event.clientX);
+  //     box.style.backgroundColor = `rgb(
+  //       ${Math.round(Math.random() * 255)},
+  //       ${Math.round(Math.random() * 255)},
+  //       ${Math.round(Math.random() * 255)}
+  //       )`;
+  //   }
+  function changebgcolor() {
+    let onethird = window.innerWidth / 3;
+    let halfY = window.innerHeight / 2;
+
+    if (event.clientX < onethird && event.clientY < halfY) {
+      box1.style.backgroundColor = "red";
+      box2.style.backgroundColor = "";
+      box3.style.backgroundColor = "";
+      box4.style.backgroundColor = "";
+      box5.style.backgroundColor = "";
+      box6.style.backgroundColor = "";
+    } else if (
+      event.clientX > onethird &&
+      event.clientX < onethird * 2 &&
+      event.clientY < halfY
+    ) {
+      box1.style.backgroundColor = "";
+      box2.style.backgroundColor = "yellow";
+      box3.style.backgroundColor = "";
+      box4.style.backgroundColor = "";
+      box5.style.backgroundColor = "";
+      box6.style.backgroundColor = "";
+    } else if (event.clientX > onethird * 2 && event.clientY < halfY) {
+      box1.style.backgroundColor = "";
+      box2.style.backgroundColor = "";
+      box3.style.backgroundColor = "greeen";
+      box4.style.backgroundColor = "";
+      box5.style.backgroundColor = "";
+      box6.style.backgroundColor = "";
+    } else if (event.clientX < onethird && event.clientY > halfY) {
+      box1.style.backgroundColor = "";
+      box2.style.backgroundColor = "";
+      box3.style.backgroundColor = "";
+      box4.style.backgroundColor = "blue";
+      box5.style.backgroundColor = "";
+      box6.style.backgroundColor = "";
+    } else if (
+        event.clientX > onethird &&
+      event.clientX < onethird * 2 &&
+      event.clientY > halfY
+    ) {
+      box1.style.backgroundColor = "";
+      box2.style.backgroundColor = "";
+      box3.style.backgroundColor = "";
+      box4.style.backgroundColor = "";
+      box5.style.backgroundColor = "magenta";
+      box6.style.backgroundColor = "";
+    } else if (event.clientX > onethird * 2 && event.clientY > halfY) {
+      box1.style.backgroundColor = "";
+      box2.style.backgroundColor = "";
+      box3.style.backgroundColor = "";
+      box4.style.backgroundColor = "";
+      box5.style.backgroundColor = "";
+      box6.style.backgroundColor = "black";
+    }
+  }
+
+
+//   <style>
+//   #truck {
+//     /* left:50px;
+//   margin-left: 150; */
+//     transform: scale(-1, 1);
+//     width: 150px;
+//     position: absolute;
+//   }
+// </style>
+
+// <img id="truck" src="4.jpg" />
+
+// <script>
+//   //  offsetLeft = left + marginLeft
+
+//   // // let counter = 0;
+
+//   let meriKey = setInterval(function () {
+//     // counter++;
+//     truck.style.left = truck.offsetLeft + 2 + "px";
+
+//     let rightSide = truck.offsetLeft + truck.offsetWidth;
+//     console.log(rightSide);
+
+//     if (rightSide == window.innerWidth) {
+//       clearInterval(meriKey);
+//     }
+//   }, 20);
+</script>
