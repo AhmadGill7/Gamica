@@ -1,0 +1,36 @@
+<!-- <script>
+  function duplicateCount(text) {
+    let str = text.toLowerCase();
+    let seen = [];
+    let counter = 0;
+
+    for (let char of str) {
+      if (str.split(char).length - 1 > 1 && !seen.includes(char)) {
+        counter++;
+        seen.push(char);
+      }
+    }
+
+    return counter;
+  }
+
+  let ab = "aaBbdcde";
+  console.log(duplicateCount(ab)); // Output: 3
+</script> -->
+<!-- task 2 -->
+<!-- <script>
+  function deleteNth(arr, n) {
+    let counts = []; // Array to track counts of each number
+    let result = [];
+    for (let num of arr) {
+      let count = counts[num] || 0; // Get the current count of num (defaults to 0)
+      if (count < n) {
+        result.push(num); // Add num to result
+        counts[num] = count + 1; // Increment the count of num
+      }
+    }
+    return result;
+  }
+  let a = [1, 2, 3, 1, 2, 1, 2, 3];
+  console.log(deleteNth(a, 2)); // Output: [1, 2, 3, 1, 2, 3]
+</script> -->

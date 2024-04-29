@@ -1,144 +1,125 @@
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  #box {
-    background-color: orange;
-    width: 10em;
-    height: 10em;
-    margin-top: 30px;
-    margin-left: 30px;
-  }
-  #mainbody {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: white;
-  }
-  .boxes {
-    width: 33%;
-  }
-  /* #box1 {
-    background-color: orange;
-  }
-  #box2 {
-    background-color: blue;
-  }
-  #box3 {
-    background-color: pink;
-  }
-  #box4 {
-    background-color: black;
-  }
-  #box5 {
-    background-color: red;
-  }
-  #box6 {
-    background-color: magenta;
-  } */
-</style>
-<body id="mainbody" class="main" onmouseover="changebgcolor()">
-  <div id="box1" class="boxes"></div>
-  <div id="box2" class="boxes"></div>
-  <div id="box3" class="boxes"></div>
-  <div id="box4" class="boxes"></div>
-  <div id="box5" class="boxes"></div>
-  <div id="box6" class="boxes"></div>
-  <!-- <div id="box" onmouseover="changecolor()" onmouseout="changecolor()"></div> -->
-</body>
-<script>
-  //   function changecolor() {
-  //     console.log(event.clientX);
-  //     box.style.backgroundColor = `rgb(
-  //       ${Math.round(Math.random() * 255)},
-  //       ${Math.round(Math.random() * 255)},
-  //       ${Math.round(Math.random() * 255)}
-  //       )`;
-  //   }
-  function changebgcolor() {
-    let onethird = window.innerWidth / 3;
-    let halfY = window.innerHeight / 2;
-
-    if (event.clientX < onethird && event.clientY < halfY) {
-      box1.style.backgroundColor = "red";
-      box2.style.backgroundColor = "";
-      box3.style.backgroundColor = "";
-      box4.style.backgroundColor = "";
-      box5.style.backgroundColor = "";
-      box6.style.backgroundColor = "";
-    } else if (
-      event.clientX > onethird &&
-      event.clientX < onethird * 2 &&
-      event.clientY < halfY
-    ) {
-      box1.style.backgroundColor = "";
-      box2.style.backgroundColor = "yellow";
-      box3.style.backgroundColor = "";
-      box4.style.backgroundColor = "";
-      box5.style.backgroundColor = "";
-      box6.style.backgroundColor = "";
-    } else if (event.clientX > onethird * 2 && event.clientY < halfY) {
-      box1.style.backgroundColor = "";
-      box2.style.backgroundColor = "";
-      box3.style.backgroundColor = "greeen";
-      box4.style.backgroundColor = "";
-      box5.style.backgroundColor = "";
-      box6.style.backgroundColor = "";
-    } else if (event.clientX < onethird && event.clientY > halfY) {
-      box1.style.backgroundColor = "";
-      box2.style.backgroundColor = "";
-      box3.style.backgroundColor = "";
-      box4.style.backgroundColor = "blue";
-      box5.style.backgroundColor = "";
-      box6.style.backgroundColor = "";
-    } else if (
-        event.clientX > onethird &&
-      event.clientX < onethird * 2 &&
-      event.clientY > halfY
-    ) {
-      box1.style.backgroundColor = "";
-      box2.style.backgroundColor = "";
-      box3.style.backgroundColor = "";
-      box4.style.backgroundColor = "";
-      box5.style.backgroundColor = "magenta";
-      box6.style.backgroundColor = "";
-    } else if (event.clientX > onethird * 2 && event.clientY > halfY) {
-      box1.style.backgroundColor = "";
-      box2.style.backgroundColor = "";
-      box3.style.backgroundColor = "";
-      box4.style.backgroundColor = "";
-      box5.style.backgroundColor = "";
-      box6.style.backgroundColor = "black";
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture Day 29 Classwork</title>
+  </head>
+  <style>
+    #box {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      background-color: red;
     }
+  </style>
+  <body>
+    <div
+      id="box"
+      onmousedown="dragStart()"
+      onmouseup="dragEnd()"
+      onmousemove="drag()"
+    ></div>
+    <script>
+      let distX;
+      let distY;
+      let dragstarthogye = false;
+      function dragStart() {
+        distY = event.clientY - box.offsetTop;
+        distX = event.clientX - box.offsetLeft;
+        dragstarthogye = true;
+        console.log("started");
+      }
+      function dragEnd() {
+        dragstarthogye = false;
+        console.log("drag Ended");
+      }
+      function drag() {
+        if (dragstarthogye == true) {
+          console.log("draging");
+          box.style.top = event.clientY - distY + "px";
+          box.style.left = event.clientX - distX + "px";
+        }
+      }
+    </script>
+  </body>
+</html> -->
+
+<style>
+  #app {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 70vw;
+    height: 70vh;
+    border: 5px solid black;
   }
 
+  #smallBox {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    width: 60%;
+    height: 30%;
+    border: 5px solid red;
+  }
+  /* offsetLeft -  kisi tag ki left position nikalna */
+  /* offsetTop -  kisi tag ki top position nikalna */
 
-//   <style>
-//   #truck {
-//     /* left:50px;
-//   margin-left: 150; */
-//     transform: scale(-1, 1);
-//     width: 150px;
-//     position: absolute;
-//   }
-// </style>
+  #circle {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: green;
+  }
+</style>
 
-// <img id="truck" src="4.jpg" />
+<script></script>
 
-// <script>
-//   //  offsetLeft = left + marginLeft
+<div id="app">
+  <div id="smallBox">
+    <div id="circle"></div>
+  </div>
+</div>
 
-//   // // let counter = 0;
+<script>
+  let myDirection = "right";
 
-//   let meriKey = setInterval(function () {
-//     // counter++;
-//     truck.style.left = truck.offsetLeft + 2 + "px";
+  setInterval(function () {
+    let bigBoxRight = app.offsetLeft + app.offsetWidth;
+    let circleRight = app.offsetLeft + circle.offsetLeft + circle.offsetWidth;
 
-//     let rightSide = truck.offsetLeft + truck.offsetWidth;
-//     console.log(rightSide);
+    if (myDirection == "right") {
+      circle.style.left = circle.offsetLeft + 1 + "px";
+    } else {
+      circle.style.left = circle.offsetLeft - 1 + "px";
+    }
 
-//     if (rightSide == window.innerWidth) {
-//       clearInterval(meriKey);
-//     }
-//   }, 20);
+    if (circleRight >= bigBoxRight) {
+      myDirection = "left";
+    } else if (circle.offsetLeft <= 0) {
+      myDirection = "right";
+    }
+
+    let smallBoxRight = smallBox.offsetLeft + smallBox.offsetWidth;
+
+    if (
+      circle.offsetLeft > smallBox.offsetLeft &&
+      circleRight < smallBoxRight + app.offsetLeft
+    ) {
+      circle.style.backgroundColor = "orange";
+    } else {
+      circle.style.backgroundColor = "green";
+    }
+  }, 0);
 </script>

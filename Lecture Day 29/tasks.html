@@ -1,45 +1,166 @@
-<style>
-  #truck {
-    transform: scale(-1, 1);
-    width: 150px;
+<!-- Class Task -->
+<!-- <style>
+  #app {
     position: absolute;
-    margin-top: 50px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 70vw;
+    height: 70vh;
+    border: 5px solid black;
+  }
+
+  #smallBox {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    width: 60%;
+    height: 30%;
+    border: 5px solid red;
+  }
+  /* offsetLeft -  kisi tag ki left position nikalna */
+  /* offsetTop -  kisi tag ki top position nikalna */
+
+  #circle {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: green;
+  }
+  #smallerBox {
+    width: 60%;
+    height: 80%;
+    border: 3px solid orange;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
   }
 </style>
-<img id="truck" src="4.jpg" />
-<button onclick="down()">left</button>
-<button>right</button>
-<button>top</button>
-<button>bottom</button>
+
+<div id="app">
+  <div id="smallBox">
+    <div id="circle"></div>
+    <div id="smallerBox"></div>
+  </div>
+</div>
+
 <script>
-  // let direction = "right";
-  // let counter = 0;
-  // let meriKey = setInterval(function () {
-  //   if (direction == "right") {
-  //     truck.style.left = truck.offsetLeft + 2 + "px";
-  //   } else {
-  //     truck.style.left = truck.offsetLeft - 2 + "px";
-  //   }
-  //   let rightSide = truck.offsetLeft + truck.offsetWidth;
-  //   if (rightSide >= window.innerWidth) {
-  //     direction = "left";
-  //     counter++;
-  //   } else if ((truck.offsetLeft <= 0)) {
-  //     direction = "right";
-  //   }
-  //   if(counter==3){
-  //     clearInterval(meriKey)
-  //   }
-  // }, 1);
+  let myDirection = "right";
 
-  function down() {
-   let down = setInterval(function () {
-        truck.style.top = truck.offsetTop + 2 + "px";
-    }, 1);
-        let bottom = truck.offsetTop + truck.offsetHeight;
+  setInterval(function () {
+    if (myDirection == "right") {
+      circle.style.left = circle.offsetLeft + 1 + "px";
+    } else {
+      circle.style.left = circle.offsetLeft - 1 + "px";
+    }
+    let circleleft = app.offsetLeft + smallBox.offsetLeft + circle.offsetLeft;
+    let circleright =
+      app.offsetLeft +
+      smallBox.offsetLeft +
+      circle.offsetLeft +
+      circle.offsetWidth;
+    let smallBoxright =
+      app.offsetLeft + smallBox.offsetLeft + smallBox.offsetWidth;
+    let smallerBoxright =
+      app.offsetLeft + smallBox.offsetLeft + smallerBox.offsetLeft;
 
-    if (bottom >= window.innerHeight) {
-      clearInterval(down)
-    } 
-  }
-</script>
+    if (circleleft > smallBoxright - circle.offsetWidth) {
+      myDirection = "left";
+    } else if (circle.offsetLeft <= 0) {
+      myDirection = "right";
+    }
+    let smallerboxleft =
+      smallerBox.offsetLeft + app.offsetLeft + smallBox.offsetleft;
+    if (
+        circleleft >= smallerBoxright &&
+      circleright <= smallerBoxright + smallerBox.offsetWidth
+    ) {
+      circle.style.backgroundColor = "red";
+    } else {
+      circle.style.backgroundColor = "green";
+    }
+  }, 0);
+</script> -->
+<!-- Second Task -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Two</title>
+  </head>
+  <style>
+    button {
+      height: 50px;
+      width: 100px;
+      background-color: antiquewhite;
+      font-style: italic;
+      font-weight: bolder;
+      font-size: larger;
+      color: white;
+      text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
+    img{
+        width : 400px;
+        height: 250px;
+
+    }
+  </style>
+  <body>
+    <!-- The Task is to add a button whick adds pictures to the Html but this image should not exceed more then 3 -->
+    <button onclick="addTruck()">Add Truck</button>
+    <button onclick="addCar()">Add Car</button>
+    <button onclick="addHelo()">Add Helo</button>
+    <div id="mainBox"></div>
+    <script>
+      let truckCount = 1;
+      function addTruck() {
+        if (truckCount <= 3) {
+          console.log(truckCount + " Dafa Click Hua");
+          truckCount++;
+          let image = document.createElement("img");
+          image.src = "./assets/4.jpg";
+          mainBox.append(image);
+        }else{
+            alert("3 dafa Add Hogya ab ni krna add mainy")
+        }
+      }
+      let carCount = 1;
+      function addCar() {
+        if (carCount <= 3) {
+          console.log(carCount + " Dafa Click Hua");
+          carCount++;
+          let image = document.createElement("img");
+          image.src = "./assets/HellCat.jpg";
+          mainBox.append(image);
+        }else{
+            alert("3 dafa Add Hogya ab ni krna add mainy")
+        }
+      }
+      let HeloCount = 1;
+      function addHelo() {
+        if (HeloCount <= 3) {
+          console.log(HeloCount + " Dafa Click Hua");
+          HeloCount++;
+          let image = document.createElement("img");
+          image.src = "./assets/Helo.jpg";
+          mainBox.append(image);
+        }else{
+            alert("3 dafa Add Hogya ab ni krna add mainy")
+        }   
+      }
+    </script>
+  </body>
+</html>
