@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop Game</title>
+  </head>
+  <style>
+    #parent {
+      display: flex;
+      width: 100%;
+      box-sizing: border-box;
+      height: 90vh;
+      flex-grow: 1;
+      border: 1px solid red;
+    }
+    .child {
+      height: 100%;
+      flex-grow: 1;
+    }
+    
+    #circle {
+      height: 80px;
+      width: 80px;
+      border-radius: 80px;
+      position: absolute;
+      top: 90%;
+    }
+  </style>
+  <body>
+    <div id="parent">
+      <div id="child1" style="background-color: red;" class="child"></div>
+      <div id="child2" style="background-color: black;" class="child"></div>
+      <div id="child3" style="background-color: orange;" class="child"></div>
+    </div>
+    <div id="circle"></div>
+    <script>
+      let num = Math.floor(Math.random() * 3);
+      if (num == 0) {
+        circle.style.backgroundColor = "red";
+      } else if (num == 0) {
+        circle.style.backgroundColor = "black";
+      } else {
+        circle.style.backgroundColor = "orange";
+      }
+
+      function check(div) {
+        let divLeft = div.offsetLeft;
+        let divRight = div.offsetLeft + div.offsetWidth;
+
+        let circleLeft = circle.offsetLeft;
+        let circleRight = circle.offsetLeft + circle.offsetWidth;
+        if (circleLeft > divLeft && circleRight < divRight) {
+          return true;
+        }
+        return false;
+      }
+
+      makeDraggable(circle);
+      function makeDraggable(tag) {
+        let draging = false;
+        let x;
+        let y;
+        tag.onmousedown = function () {
+          draging = true;
+          x = event.clientX - tag.offsetLeft;
+          y = event.clientY - tag.offsetTop;
+        };
+        tag.onmousemove = function () {
+          if (draging) {
+            circle.style.top = event.clientY - y + "px";
+            circle.style.left = event.clientX - x + "px";
+          }
+        };
+        tag.onmouseup = function () {
+          if (check(child1)) {
+            if (circle.style.backgroundColor == child1.style.backgroundColor) {
+              alert("You Win");
+            } else {
+              console.log("first condition my hi chala h ")
+              alert("Better Luck Next Time");
+            }
+          } else if(check(child2)) {
+            if (circle.style.backgroundColor == child2.style.backgroundColor) {
+              alert("You Win");
+            } else {
+              console.log("second condition my chala h ")
+              alert("Better Luck Next Time");
+            }
+          } else {
+            if (circle.style.backgroundColor == child3.style.backgroundColor) {
+              alert("You Win");
+            } else {
+              console.log("third condition my chala h ")
+              alert("Better Luck Next Time");
+            }
+          }
+          draging = false;
+        };
+      }
+    </script>
+  </body>
+</html>

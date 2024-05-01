@@ -6,7 +6,13 @@
     <title>Baloon Game</title>
   </head>
   <style>
+    body{
+      background-color: aqua;
+    }
     #app {
+      background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20230825/pngtree-landscape-with-mountains-forest-and-clouds-2d-game-background-image_13246432.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
       width: 80vw;
       height: 80vh;
       border: 2px solid black;
@@ -92,7 +98,7 @@
           if (gameOverHogya) {
             return;
           }
-          
+
           redBaloon.remove();
           redBaloon.userRemoved = true;
           score += 3;
@@ -130,7 +136,7 @@
               clearInterval(GreensubInterval);
             }
           }
-        }, 20);
+        }, 200);
         if (chancesBox.children.length == 0) {
           clearInterval(mainInterval);
           clearInterval(GreensubInterval);

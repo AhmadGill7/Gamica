@@ -1,0 +1,69 @@
+<!-- <script>
+//   Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+// moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+
+//  Soloution :-
+
+
+  let a = [false, 1, 0, 1, 2, 0, 1, 3, "a"];
+  console.log(moveZeros(a));
+  function moveZeros(arr) {
+    let res = [];
+    let zeros = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 0) {
+        zeros.push(arr[i]);
+        arr.splice(i, 1);
+        i--;
+      } else {
+        res.push(arr[i]);
+      }
+    }
+    for (let i of zeros) {
+      res.push(i);
+    }
+    return res;
+  }
+
+  //    the best practice soloution for this on CodeWars :
+
+  //   var moveZeros = function (arr) {
+  //     return arr.filter(function (x) {return x !== 0;}).concat(arr.filter(function (x) {return x === 0;}));
+  //   };
+
+
+
+
+  // Summary:-
+  /*  ive created two variables "res" and "zeros" which contain the non zeros and zeros ;
+    Then ive pushed the zeros and non zeror to there variable and the looped the zeros variable to push the things in the zeros to the res variable;
+    and simply returned the res variable;
+    */
+
+
+
+</script> -->
+
+<script>
+  // second Question
+  //  Write a function named first_non_repeating_letter† that takes a string input, and returns the first character that is not repeated anywhere in the string.
+
+  // For example, if given the input 'stress', the function should return 't', since the letter t only occurs once in the string, and occurs first in the string.
+
+  // As an added challenge, upper- and lowercase letters are considered the same character, but the function should return the correct case for the initial letter. For example, the input 'sTreSS' should return 'T'.
+
+  // If a string contains all repeating characters, it should return an empty string ("");
+
+  // † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character.
+
+
+
+
+//   soloution :- 
+
+
+  function firstNonRepeatingLetter(s) {
+    // Add your code here
+  }
+</script>
