@@ -1,0 +1,24 @@
+<script>
+  // Question
+  // Task
+  // You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+  // Examples
+  // [7, 1]  =>  [1, 7]
+  // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+  // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+  let arr = [5, 8, 6, 3, 4];
+  [3, 5];
+  console.log(sortArray(arr));
+
+  function sortArray(array) {
+    const odd = array.filter((x) => x % 2).sort((a, b) => a - b);
+    return array.map((x) => (x % 2 ? odd.shift() : x));
+  }
+  /*  Summary of answer:-
+   1) in the first step, seperate the odds to an array of "odd", then we have sorted this array;
+   2) then change the array using ternary operator(if the number is odd it will remove the first number from the
+      sorted odds array and the put that value on the targeted index instead of the real number, and if the number is even it wont do anything just put the even number in its real position it wont change anything)
+ */
+</script>

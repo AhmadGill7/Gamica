@@ -1,0 +1,111 @@
+<style>
+  #app {
+    width: 70vw;
+    height: 60vw;
+    border: 2px solid red;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .baloon {
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #scoreBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+  }
+
+  #chancesBox img {
+    width: 100px;
+  }
+
+  #chancesBox {
+    position: absolute;
+    right: 0;
+  }
+</style>
+
+<div id="app">
+  <div id="scoreBox">0</div>
+
+  <div id="chancesBox">
+    <img class="chance" src="chance.png" />
+    <img class="chance" src="chance.png" />
+    <img class="chance" src="chance.png" />
+  </div>
+</div>
+
+<script>
+  let gameOverHogya = false;
+  let score = 0;
+
+  let keys = [];
+
+  let createWal = setInterval(() => {
+    let baloon = document.createElement("img");
+
+    baloon.onclick = function () {
+      if (gameOverHogya) {
+        return;
+      }
+
+      score++;
+      console.log(score);
+      baloon.remove();
+
+      baloon.userNeRemoveKara = true;
+
+      scoreBox.innerText = score;
+    };
+
+    baloon.src = "./assets/green baloon.png";
+    baloon.style.left = app.offsetWidth * Math.random() + "px";
+
+    baloon.className = "baloon";
+
+    app.append(baloon);
+
+    let mover = setInterval(() => {
+      console.log("baloon chaling");
+
+      baloon.style.bottom = parseFloat(baloon.style.bottom || 0) + 1 + "px";
+
+      if (
+        !baloon.userNeRemoveKara &&
+        baloon.offsetTop + baloon.offsetHeight <= 0
+      ) {
+        let chanceH = chancesBox.children[chancesBox.children.length - 1];
+
+        if (chanceH) {
+          chanceH.remove();
+          baloon.remove();
+          clearInterval(mover);
+
+          if (chancesBox.children.length == 0) {
+            clearInterval(createWal);
+
+            for (let key of keys) {
+              clearInterval(key);
+            }
+            alert("game over");
+            gameOverHogya = true;
+          }
+        }
+      }
+    }, Math.random() * 100);
+
+    keys.push(mover);   
+  }, 500);
+</script>

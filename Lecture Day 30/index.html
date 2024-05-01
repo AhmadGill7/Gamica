@@ -1,0 +1,167 @@
+<!-- First -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    .box-css {
+      margin-bottom: 20px;
+      height: 200px;
+      width: 200px;
+      box-sizing: border-box;
+      border: 2px solid black;
+      /* box-shadow: 10px 10px 10px red; */
+    }
+    .selected {
+      /* box-shadow: 10px 10px 10px black; */
+      border-top: 3px solid red;
+      border-radius: 200px;
+      animation: rotate 1s linear infinite;
+    }
+    @keyframes rotate {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+
+        }
+        
+    }
+  </style>
+
+  <body>
+    <div id="container"></div>
+    <script>
+      let puraaneWala = container.children[0];
+      for (let i = 0; i < 7; i++) {
+        let box = document.createElement("div");
+        box.className = "box-css";
+        box.classList.add("box");
+
+        container.append(box);
+        box.onclick = function () {
+          if (puraaneWala) {
+            puraaneWala.classList.remove("selected");
+          }
+          puraaneWala = event.target;
+          box.classList.add("selected");
+        };
+      }
+    </script>
+  </body>
+</html>
+
+<!-- Second  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .selected {
+      border: 5px solid blue;
+    }
+
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .box-css {
+      height: 200px;
+      width: 200px;
+      background-color: black;
+    }
+  </style>
+
+  <body>
+    <div id="container"></div>
+    <script>
+      for (let i = 0; i < 5; i++) {
+        let box = document.createElement("div");
+        box.className = "box-css";
+
+        box.onclick = function () {
+          if (puraaneWala) {
+            puraaneWala.classList.remove("selected");
+          }
+          puraaneWala = event.target;
+          box.classList.add("selected");
+        };
+        container.append(box);
+      }
+      let puraaneWala = container.children[0];
+      puraaneWala.classList.add("selected");
+    </script>
+  </body>
+</html> -->
+
+<!-- third -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .selected {
+      border: 5px solid blue;
+    }
+
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .box-css {
+      height: 200px;
+      width: 200px;
+      background-color: black;
+    }
+  </style>
+
+  <body>
+    <div id="container"></div>
+    <script>
+      for (let i = 0; i < 5; i++) {
+        let box = document.createElement("div");
+        box.className = "box-css";
+        
+        // puranaWala.classList.add("selected");
+        
+        box.onclick = function () {
+            if (puranaWala) {
+                puranaWala.classList.remove("selected");
+            }
+            puranaWala = event.target;
+            box.classList.add('selected');
+
+        };
+        box.classList.add('box');
+
+        container.append(box);
+    }
+    let puranaWala = container.children[0];
+    puranaWala.classList.add('selected');
+    
+    </script>
+  </body>
+</html> -->

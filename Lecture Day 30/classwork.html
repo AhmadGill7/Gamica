@@ -1,0 +1,259 @@
+<!-- [9:39 AM, 4/27/2024] SIR Khurram Gamica: 
+<button onclick="addItem('tank.png')">Add Tank</button>
+<button onclick="addItem('rocket.png')">Add Rocket</button>
+
+<style>
+  /* #a1{
+   background-color: red;
+}
+
+   .box{
+      opacity: 0.2;
+   } */
+</style>
+
+<div id="some"></div>
+
+<script>
+  function addItem(src) {
+    let myPic = document.createElement("img");
+    myPic.src = src;
+    myPic.className = "box";
+    myPic.id = "a1";
+
+    // myPic.style.background = 'red';
+
+    some.append(myPic);
+  } -->
+</script>
+
+
+<!-- [10:08 AM, 4/29/2024] SIR Khurram Gamica: 
+<style>
+  .like-btn {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 13px;
+    top: 18px;
+  }
+
+  .contentCOntainer {
+    position: relative;
+    padding: 10px;
+  }
+
+  .thumbBox {
+    background-color: black;
+    text-align: center;
+  }
+
+  .ad-box img {
+    max-height: 150px;
+  }
+
+  #some {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ad-box {
+    width: 250px;
+    height: 300px;
+    border: 1px solid grey;
+  }
+</style>
+
+<pakistan>
+   <capital>
+      islamabad
+   </capital>
+   <provinces>
+      <punjab></punjab>
+      <KPK></KPK>
+   </provinces>
+</pakistan> 
+<qorma>
+  adsasdasd
+
+  <svg height="20" viewBox="0 0 36.289 20.768" alt="Logo" class="_10c831ef">
+    <path
+      d="M18.9 20.77V0h4.93v20.77zM0 10.39a8.56 8.56 0 1 1 8.56 8.56A8.56 8.56 0 0 1 0 10.4zm5.97-.01a2.6 2.6 0 1 0 2.6-2.6 2.6 2.6 0 0 0-2.6 2.6zm27 5.2l-1.88-1.87-1.87 1.88H25.9V12.3l1.9-1.9-1.9-1.89V5.18h3.27l1.92 1.92 1.93-1.92h3.27v3.33l-1.9 1.9 1.9 1.9v3.27z"
+    ></path>
+  </svg>
+</qorma>
+
+<biryani> asdasdjasdkjaskdjasd </biryani>
+
+<div id="some"></div>
+
+<script>
+  let ads = [
+    {
+      title: "HP 650",
+      src: "https://images.olx.com.pk/thumbnails/448172509-240x180.webp",
+    },
+    {
+      title: "VIV A71",
+      src: "https://images.olx.com.pk/thumbnails/450187002-240x180.webp",
+    },
+    {
+      title: "DELL 789",
+      src: "https://images.olx.com.pk/thumbnails/446341886-240x180.webp",
+    },
+    { title: "ACER i54thGEN", src: "meter.png" },
+  ];
+
+  for (let ad of ads) {
+    let adBox = document.createElement("div");
+    adBox.className = "ad-box";
+
+    let adThumb = document.createElement("img");
+    adThumb.src = ad.src;
+
+    let thumbCOntainer = document.createElement("div");
+    thumbCOntainer.className = "thumbBox";
+
+    let contentCOntainer = document.createElement("div");
+    contentCOntainer.className = "contentCOntainer";
+
+    let likeBTN = document.createElement("img");
+    likeBTN.className = "like-btn";
+    likeBTN.src = "like.svg";
+
+    let titleTag = document.createElement("h4");
+    titleTag.innerHTML = ad.title;
+
+    contentCOntainer.append(titleTag, likeBTN);
+
+    // adBox.innerHTML = ad.title;
+
+    thumbCOntainer.append(adThumb);
+
+    adBox.append(thumbCOntainer, contentCOntainer);
+
+    some.append(adBox);
+  }
+
+  // let mYImage = document.createElement('img');
+  // mYImage.src = 'meter.png';
+  // some.append(mYImage);
+
+  // document.createElement('span')
+</script> -->
+<!-- <button  id="someBTN">asdasj</button> -->
+
+<style>
+
+  .selected{
+     border:5px solid black;
+  }
+  
+  #container{
+     flex-wrap: wrap;
+     display: flex;
+     justify-content: space-around;
+  }
+  
+  .box{
+     width: 200px;
+     height: 200px;
+     background-color: orange;
+  }
+  
+  </style>
+  
+  <li>FSD</li>
+  <li id="sine">ISD</li>
+  <li>LHR</li>
+  
+  
+  <!-- sine.previousElemetneSibling
+  
+  sine.nextgElemetneSibling -->
+  
+  
+  
+  <div id="container">
+        
+  </div>
+  
+  <script>
+  
+   
+  
+     // document.onkeydown = function(){
+  
+  
+     //    if(puranaWala){
+     //       puranaWala.classList.remove('selected');
+     //    }
+  
+     //   if(event.keyCode == 37){
+        
+  
+     //    if(puranaWala.previousElementSibling){
+  
+     //       puranaWala = puranaWala.previousElementSibling;
+     //       puranaWala.classList.add('selected');
+     //    }
+        
+  
+     //   }else if(event.keyCode  == 39){
+  
+     //    // kis tag kay neeche wala tag uthana ho to
+     //     if(puranaWala.nextElementSibling){
+  
+     //       puranaWala = puranaWala.nextElementSibling;
+     //       puranaWala.classList.add('selected');
+     //     }
+  
+     //   }
+  
+     // }
+  
+  for(let i= 0;i<5;i++){
+  
+     let box =  document.createElement('div');
+   
+     // event listenere      event handler
+     box.onclick           = function(){
+        
+        if(puranaWala){
+           puranaWala.classList.remove('selected');
+        }
+  
+        puranaWala = event.target;
+  
+        // kisi tag per koi class lgana
+        box.classList.add('selected');
+  
+        // kisi tag per se koi class remove krna
+        // box.classList.remove('selected');
+  
+     }
+   
+     box.classList.add('box');
+  
+     // box.className = 'box';
+     
+     container.append(box)
+  
+  }
+  
+  
+  let puranaWala  = container.children[0]; 
+     puranaWala.classList.add('selected');
+  
+  
+  // someBTN.onclick = add;
+  
+  // function add(){
+  
+  //    alert('some code cdhaling')
+     
+  
+  // }
+  
+  
+  </script>

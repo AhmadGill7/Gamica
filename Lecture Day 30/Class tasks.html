@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 30</title>
+  </head>x
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #some {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .ad-container {
+      width: 17em;
+      height: 22em;
+      border: 2px solid black;
+    }
+    .image-container {
+      width: 100%;
+      height: 60%;
+      text-align: center;
+      border: 1px solid black;
+      background-color: black;
+    }
+    .ad-image {
+      height: 100%;
+      width: 40%;
+
+    }
+    .like-button{
+    height: 20px;
+    width: 25px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    }
+    .like-button:hover{
+        background-color: red;
+    }
+    .content-container{
+    position: relative;
+    padding: 10px;
+    }
+  </style>
+  <body>
+    <div id="some"></div>
+
+    <script>
+      let ads = [
+        {
+          title: "Lg G8x Thinq",
+          src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRbGpzMFhcJhugzq7UQIBd0ykKYVPQGbGZtPSjOadPpw&s",
+        },
+        {
+          title: "Lg v60",
+          src: "https://www.whatmobile.com.pk/admin/images/LG/LGV60ThinQ5G-b.jpg",
+        },
+        {
+          title: "oneplus 7t pro",
+          src: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-7t-pro.jpg",
+        },
+        {
+          title: "nothing phone 2",
+          src: "https://cdn.arstechnica.net/wp-content/uploads/2023/07/78-scaled.jpg",
+        },
+      ];
+      for (const ad of ads) {
+        let adContainer = document.createElement("div");
+        adContainer.className = "ad-container";
+        let imageContainer = document.createElement("div");
+        imageContainer.className = "image-container";
+
+        let adImage = document.createElement("img");
+        adImage.className = "ad-image";
+        adImage.src = ad.src;
+        imageContainer.append(adImage);
+
+        let contentContainer = document.createElement("div");
+        contentContainer.className = "content-container";
+        let titleTag = document.createElement("h3");
+        titleTag.innerHTML = ad.title;
+        let likeButton = document.createElement("img");
+        likeButton.className = "like-button"
+        likeButton.src = "like.svg"
+        contentContainer.append(titleTag, likeButton)
+        adContainer.append(imageContainer, contentContainer);
+        some.append(adContainer);
+      }
+    </script>
+  </body>
+</html>
+
