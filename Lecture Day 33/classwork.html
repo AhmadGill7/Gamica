@@ -1,0 +1,82 @@
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"
+></script>
+
+<form id="signup-page" style="display: none">
+  <input id="signupName" type="text" /> <br />
+  <input id="signupPassword" type="password" /> <br />
+  <input id="signupBalance" type="number" /> <br />
+  <button>Create Account</button>
+</form>
+
+<div id="dashboard" style="display: none">
+  <h1>Meezan Bank</h1>
+</div>
+
+<form action="" id="login-page" style="display: none">
+  <input id="loginName" type="text" /> <br />
+  <input id="loginPassword" type="password" /> <br />
+  <button>Login</button>
+</form>
+
+<button id="signup-mover">New User</button>
+<button id="login-mover">Already a user?</button>
+
+<script>
+  let accounts = [
+    {
+      name: "ali",
+      password: 133,
+      balance: 100,
+    },
+  ];
+
+  $("#login-page").on("submit", function (evt) {
+    evt.preventDefault();
+
+    let userName = loginName.value;
+    let userPassword = loginPassword.value;
+
+    let userMilgya = accounts.find(function (account) {
+      if (account.name == userName && account.password == userPassword) {
+        return true;
+      }
+    });
+
+    if (userMilgya) {
+      alert("ok h");
+      $("#login-page").hide();
+      $("#dashboard").show();
+    } else {
+      alert("nahi mila");
+    }
+  });
+
+  $("#signup-page").on("submit", function (evt) {
+    let newAccount = {
+      name: signupName.value,
+      password: signupPassword.value,
+      balance: signupBalance.value,
+      transations: [],
+    };
+
+    accounts.push(newAccount);
+
+    $("#signup-page")[0].reset();
+
+    evt.preventDefault();
+    console.log("adads");
+  });
+
+  $("#signup-mover").on("click", function (evt) {
+    $("#signup-page").show();
+    $("#login-page").hide();
+  });
+
+  $("#login-mover").on("click", function () {
+    $("#login-page").show();
+    $("#signup-page").hide();
+  });
+</script>

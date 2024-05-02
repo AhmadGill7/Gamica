@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banking Site</title>
+</head>
+<style>
+  button {
+    margin-top: 10px;
+    width: 200px;
+    height: 3em;
+  }
+
+  form input {
+    height: 30px;
+    width: 200px;
+    margin-top: 5px;
+    font-size: 1.1em;
+    padding: 4px;
+  }
+
+  #AccountTable tr {
+    display: flex;
+
+  }
+
+  #AccountTable td {
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 50px;
+    flex-grow: 1;
+  }
+
+  #AccountTable {
+    /* display: flex; */
+
+    width: 350px;
+    height: 250px;
+    /* border: 1px solid red; */
+  }
+</style>
+
+<body>
+
+  <!-- Login Form -->
+
+
+  <form id="loginForm" style="display: none">
+    <h2>Login Form</h2>
+    <input type="text" placeholder="Enter Your Username" id="LoginUserName" />
+    <br />
+    <input type="password" placeholder="Enter Your Password" id="LoginUserPassword" />
+    <br />
+    <button>Login</button>
+  </form>
+
+
+  <!-- SignUp Form -->
+
+
+  <form id="signUpForm" style="display: none">
+    <h2>SignUp Form</h2>
+    <input type="text" placeholder="Enter Your Username" id="SignUpUserName" />
+    <br />
+    <input type="password" placeholder="Enter Your Password" id="SignUpUserPassword" />
+    <br />
+    <input type="number" placeholder="Enter Your balance" id="SignUpBalance" />
+    <br />
+    <button>Create Account</button>
+  </form>
+
+  <!-- Dashboard -->
+
+
+  <div id="dashboard" style="display: none">
+    <h1>Gill Banks LLC</h1>
+    <table id="AccountTable">
+      <tr>
+        <td>Name:</td>
+        <td id="NameOnDash"></td>
+      </tr>
+      <tr>
+        <td>Balance:</td>
+        <td id="BalOnDash"></td>
+      </tr>
+    </table>
+
+
+    <Button id="Deposit" onclick="Transaction('deposit')">Deposit</Button>
+    <Button id="Withdraw" onclick="Transaction('withdraw')">Withdraw</Button>
+  </div>
+
+
+  <!-- Account Creation and Login Buttons -->
+
+  <button class="accButton" id="LoginButton">Login to Your Acc</button>
+  <button class="accButton" id="NewUserButton">Sign Up</button>
+
+
+
+
+  <!--  Scripts -->
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $("#NewUserButton").on("click", function () {
+      $("#signUpForm").show();
+      $("#loginForm").hide();
+    });
+
+    $("#LoginButton").on("click", function () {
+      $("#signUpForm").hide();
+      $("#loginForm").show();
+    });
+    let accounts = [
+      {
+        name: "ali",
+        password: 123,
+        balance: 400,
+      },
+    ];
+    $("#signUpForm").on("submit", function (b) {
+      let newAcc = {
+        name: SignUpUserName.value,
+        password: SignUpUserPassword.value,
+        balance: +SignUpBalance.value,
+      };
+      accounts.push(newAcc);
+      $("#signUpForm")[0].reset();
+      b.preventDefault();
+    });
+    let currentuser = {};
+    $("#loginForm").on("submit", function (evt) {
+      evt.preventDefault();
+      let userSname = LoginUserName.value;
+      let passwordX = LoginUserPassword.value;
+      let userMilgaya = accounts.find(function (account) {
+        if (account.name == userSname && account.password == passwordX) {
+          return true;
+        }
+      });
+
+      if (userMilgaya) {
+        $("#loginForm").hide();
+        $(".accButton").hide();
+        $("#dashboard").show();
+        showData(userMilgaya);
+        currentuser = userMilgaya
+      } else {
+        alert("Nikal ja mera putt dobara account bna");
+      }
+    });
+
+
+    function showData(user) {
+      $("#NameOnDash").text(user.name)
+      $("#BalOnDash").text(user.balance)
+    }
+
+    function Transaction(a) {
+      let amount = +prompt("Enter an Amount")
+      if (a == "deposit") {
+        currentuser.balance += amount;
+      } else {
+        currentuser.balance -= amount;
+        // showData(currentuser)
+
+      }
+      showData(currentuser)
+    }
+
+  </script>
+</body>
+
+</html>
