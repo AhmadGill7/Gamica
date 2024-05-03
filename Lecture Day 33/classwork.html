@@ -1,4 +1,4 @@
-<script
+<!-- <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
   crossorigin="anonymous"
@@ -79,4 +79,204 @@
     $("#login-page").show();
     $("#signup-page").hide();
   });
+</script> -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<style>
+  .deposit {
+    background: rgb(158, 195, 99);
+    ;
+  }
+
+  .withdraw {
+    background: #f79595
+  }
+</style>
+
+<form id="signup-page" style="display: none;">
+  <input id="signupName" type="text"> <br />
+  <input id="signupPassword" type="password"> <br />
+  <input id="signupBalance" type="number"> <br />
+  <button>Account</button>
+</form>
+
+<div id="dashboard" style="display: none;">
+  <h1>The Richi Rich Bank</h1>
+  <table border="1">
+    <tr>
+      <td>Name</td>
+      <td id="nameBox"></td>
+    </tr>
+    <tr>
+    <tr>
+      <td>Balance</td>
+      <td id="balanceBox"></td>
+    </tr>
+  </table>
+
+  <h1>
+    Account Statement
+  </h1>
+  <table id="accountStatement" border="1">
+  </table>
+
+
+
+  <button onclick="makeTransaction('dep')">Deposit</button>
+  <button onclick="makeTransaction('withdraw')">Withdraw</button>
+
+</div>
+
+
+<form action="" id="login-page" style="display: none;">
+  <input id="loginName" type="text"> <br />
+  <input id="loginPassword" type="password"> <br />
+  <button>Login</button>
+</form>
+
+<button id="signup-mover">New User</button>
+<button id="login-mover">Already a user?</button>
+<script>
+
+  function makeTransaction(type) {
+
+    let transaction = {
+      date: new Date().toDateString()
+    }
+
+    let amount = +prompt('Enter amount');
+
+    transaction.amount = amount
+
+    if (type == "dep") {
+
+      transaction.type = "deposit";
+
+      currentUser.balance += amount;
+
+    } else {
+
+      transaction.type = "withdraw";
+
+      currentUser.balance -= amount;
+
+    }
+
+    currentUser.transactions.push(transaction)
+    showData(currentUser);
+
+  }
+
+  let accounts = [
+    {
+      name: 'ali',
+      password: 133,
+      balance: 100,
+      transactions: []
+    }
+  ];
+
+  //  let a = [10,20,30,40];
+
+  //  a.forEach(function(num){
+
+  //  })
+
+  // DATA - UI
+
+  function showData(myAccount) {
+
+    $('#nameBox').text(myAccount.name);
+    $('#balanceBox').text(myAccount.balance);
+
+    $('#accountStatement').html('');
+
+    myAccount.transactions.forEach(function (transaction, index) {
+      $(`
+        <tr class="${transaction.type}">
+            <td>${transaction.date}</td>
+            <td>${transaction.type}</td>
+            <td>${transaction.amount}</td>
+            <td><button onclick="deleteTransaction(${index})">Delete</button></td>
+        </tr>
+    `).appendTo('#accountStatement');
+    });
+
+  }
+
+  let currentUser;
+
+  $('#login-page').on('submit', function (evt) {
+
+
+    evt.preventDefault();
+
+    let userName = loginName.value;
+    let userPassword = loginPassword.value;
+
+    let userMilgya = accounts.find(function (account) {
+      if (account.name == userName && account.password == userPassword) {
+        return true;
+      }
+    })
+
+    if (userMilgya) {
+      currentUser = userMilgya
+
+      showData(userMilgya);
+
+
+
+      $('#login-page').hide();
+      $('#dashboard').show();
+    } else {
+      alert('nahi mila')
+    }
+
+  });
+  function deleteTransaction(index) {
+    if (currentUser.transactions[index].type == "deposit") {
+      currentUser.balance -= currentUser.transactions[index].amount
+    } else {
+      currentUser.balance += currentUser.transactions[index].amount
+
+    }
+    currentUser.transactions.splice(index, 1);
+    showData(currentUser); // Update the displayed data after deleting the transaction
+  }
+
+
+  $('#signup-page').on('submit', function (evt) {
+
+
+    let newAccount = {
+      name: signupName.value,
+      password: signupPassword.value,
+      balance: +signupBalance.value,
+      transactions: []
+    }
+
+    accounts.push(newAccount);
+
+    $('#signup-page')[0].reset()
+
+    evt.preventDefault();
+    console.log('adads')
+
+  })
+
+  $('#signup-mover').on('click', function (evt) {
+    $('#signup-page').show();
+    $('#login-page').hide();
+  })
+
+  $('#login-mover').on('click', function () {
+    $('#login-page').show();
+    $('#signup-page').hide();
+
+  })
+
+
 </script>

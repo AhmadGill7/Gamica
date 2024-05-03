@@ -1,0 +1,75 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<table border="1">
+    <tr>
+        <td>Qorma</td>
+        <td>600</td>
+        <td>
+            <input type="checkbox" />
+        </td>
+    </tr>
+    <tr>
+        <td>Daal makhni</td>
+        <td>300</td>
+        <td>
+            <input type="checkbox" />
+        </td>
+    </tr><tr>
+        <td>haleem</td>
+        <td>360</td>
+        <td>
+            <input type="checkbox" />
+        </td>
+    </tr><tr>
+        <td>Karahi</td>
+        <td>900</td>
+        <td>
+            <input type="checkbox" />
+        </td>
+    </tr><tr>
+        <td>Biryani</td>
+        <td>400</td>
+        <td>
+            <input type="checkbox" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="calculateBill()">Get Bil</button>
+        </td>
+        <td id="grossBill">
+
+        </td>
+        <td id="netBill">
+
+        </td>
+    </tr>
+</table>
+<script>
+
+
+
+function calculateBill(){
+
+    let total = 0;
+
+    // yeh javacsript wala code
+    document.querySelectorAll('input:checked').forEach(function(meraTag){
+
+    // yeh jquery wala code
+    // $('input:checked').each(function(meraIndex, meraTag){
+        total += +meraTag.parentNode.previousElementSibling.innerText;
+        // console.log(meraTag.parentNode.previousElementSibling.innerText);
+    });
+
+    grossBill.innerText = netBill.innerText = total;
+    console.log(total)
+
+    if(total > 1500){
+        netBill.innerText = total * 0.9;
+    }
+
+}
+
+
+</script>

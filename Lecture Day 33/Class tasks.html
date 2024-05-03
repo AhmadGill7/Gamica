@@ -75,7 +75,7 @@
 
 
   <div id="dashboard" style="display: none">
-    <h1>Gill Banks LLC</h1>
+    <h1>The Richi Rich Bank</h1>
     <table id="AccountTable">
       <tr>
         <td>Name:</td>
@@ -86,7 +86,10 @@
         <td id="BalOnDash"></td>
       </tr>
     </table>
+    <h1>transactions</h1>
+    <table id="accountStatement" border="1">
 
+    </table>
 
     <Button id="Deposit" onclick="Transaction('deposit')">Deposit</Button>
     <Button id="Withdraw" onclick="Transaction('withdraw')">Withdraw</Button>
@@ -123,6 +126,7 @@
         name: "ali",
         password: 123,
         balance: 400,
+        Transactions: [],
       },
     ];
     $("#signUpForm").on("submit", function (b) {
@@ -130,6 +134,7 @@
         name: SignUpUserName.value,
         password: SignUpUserPassword.value,
         balance: +SignUpBalance.value,
+        Transactions: [],
       };
       accounts.push(newAcc);
       $("#signUpForm")[0].reset();
@@ -158,21 +163,35 @@
     });
 
 
+
+
+    function Transaction(a) {
+      let newTransaction = {
+        date: new Date().toDateString()
+      }
+      let amount = +prompt("Enter an Amount");
+      newTransaction.amount = amount;
+      if (a == "deposit") {
+        newTransaction.type = "deposit";
+        currentuserF.balance += amount;
+      } else {
+        newTransaction.type = "withdraw";
+        currentuser.balance -= amount;
+      }
+      Transactions.push(newTransaction);
+      showData(currentuser)
+    }
     function showData(user) {
       $("#NameOnDash").text(user.name)
       $("#BalOnDash").text(user.balance)
-    }
-
-    function Transaction(a) {
-      let amount = +prompt("Enter an Amount")
-      if (a == "deposit") {
-        currentuser.balance += amount;
-      } else {
-        currentuser.balance -= amount;
-        // showData(currentuser)
-
-      }
-      showData(currentuser)
+      user.Transactions.forEach(function (a, index) {
+        $('#accountStatement').append(`<tr class="${a.type}">
+            <td>${a.date}</td>
+            <td>${a.type}</td>
+            <td>${a.amount}</td>
+            <td><button onclick="deleteTransaction(${index})">Delete</button></td>
+           </tr>`)
+      });
     }
 
   </script>
