@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+</head>
+<style>
+    #container {
+        height: 450px;
+        width: 1000px;
+        border: 2px solid;
+    }
+
+    .newRectangle {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 20px 10px;
+        left: 1;
+        top: 10px;
+    }
+
+    .rectangle {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 20px 10px;
+    }
+
+    .newCircle {
+        position: absolute;
+        top: 130px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: red;
+        margin: 40px 10px;
+    }
+
+    .circle {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: red;
+        margin: 40px 10px;
+    }
+    .newTri{
+        position: absolute;
+        top: 270px;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid red;
+        margin: 40px 10px;
+
+    }
+    
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid red;
+        margin: 40px 10px;
+    }
+
+    #line {
+        border: 1px solid;
+        position: absolute;
+        margin: auto;
+        left: 140px;
+        height: 450px;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="line"></div>
+    </div>
+    <script>
+        let rectangle = document.createElement('div');
+        rectangle.className = 'rectangle'
+        container.append(rectangle);
+
+
+        let circle = document.createElement('div');
+        circle.className = 'circle'
+        container.append(circle);
+
+        let triAngle = document.createElement('div');
+        triAngle.className = 'triangle'
+        container.append(triAngle);
+
+        $(".rectangle").draggable()
+        $(".rectangle").on("mousedown", function () {
+            for (let i = 0; i < 50; i++) {
+                let newrect = document.createElement('div');
+                newrect.className = 'newRectangle'
+                container.append(newrect);
+                $(".newRectangle").draggable();
+            }
+        });
+        $(".circle").draggable();
+        $(".circle").on("mousedown", function () {
+            for (let i = 0; i < 50; i++) {
+                let newCircle = document.createElement('div');
+                newCircle.className = 'newCircle'
+                container.append(newCircle);
+                $(".newCircle").draggable();
+            }
+        });
+        $(".triangle").draggable();
+        $(".triangle").on("mousedown", function () {
+            for (let i = 0; i < 50; i++) {
+                let newTri = document.createElement('div');
+                newTri.className = 'newTri'
+                container.append(newTri);
+                $(".newTri").draggable();
+            }
+        });
+    </script>
+</body>
+
+</html>

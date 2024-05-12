@@ -1,0 +1,22 @@
+.mainCard {
+  background: #0c0c0c;
+  box-shadow: 12px 10px 20px #fff5ea;
+  color: #fff5ea;
+  height: 15rem;
+}
+.mainCard:hover{
+  scale: 1.1;
+  transition: 500ms ease;
+}
+#imageContainer {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+#imageOnCard {
+  padding: 10px;
+  width: 100%;
+}

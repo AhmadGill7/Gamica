@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Api Fetching</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+    integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    
+
+<select id="selectCity" onchange="showMosam()">
+    <option value="">Select City</option>
+    <option>Faisalabad</option>
+    <option>Quetta</option>
+    <option>Kohat</option>
+    <option>Gilgit</option>
+    <option>Moscow</option>
+</select>
+<img id="mosamPIC" src="" alt="">
+<button onclick="addCity()">Add City</button>
+<script>
+    function addCity() {
+        let selectTag = document.getElementById("selectCity")
+        let newCity = prompt("Enter a New City Name")
+        
+        if (newCity === "") {
+            return alert("City Cannot be Empty");
+        }
+        for (let option of selectTag) {
+            if (option.innerText.toLowerCase == newCity.toLowerCase) {
+                return alert("City Already Available")
+            }
+        }
+        let newOption = document.createElement("option");
+        newOption.innerText = newCity
+        return selectTag.append(newOption)
+    }
+
+    // npm install http-server -g
+
+    function showMosam() {
+
+        let city = event.target.value;
+        
+        axios.get('http://api.weatherapi.com/v1/current.json?key=24df5fcf9b6c4eaebb770740222103&q=' + city + '&aqi=no').then(function (abc) {
+            console.log(abc.data.current.temp_c);
+            console.log(abc.data.current.condition.text)
+
+            switch (abc.data.current.condition.text) {
+
+                case 'Sunny':
+                    mosamPIC.src = 'https://png.pngtree.com/thumb_back/fw800/background/20230930/pngtree-immersive-3d-depiction-of-sunny-weather-with-clouds-image_13534870.png';
+                    break;
+
+                case 'Light sleet':
+                    mosamPIC.src = 'https://media.istockphoto.com/id/157527872/photo/storm-cloud.jpg?s=612x612&w=0&k=20&c=wsK-fd2hBm9SGlV_lnKYqFCAS3-_sk-f9GFAUbT6H40=';
+                    break;
+
+            }
+
+        }).catch(function (errr) {
+            alert('city nahi mila')
+        })
+
+    }
+
+
+
+
+
+</script>
+
+<!-- POST
+PUT
+GET
+DELETE -->
+</body>
+</html>

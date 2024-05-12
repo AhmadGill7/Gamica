@@ -16,9 +16,26 @@
 <body>
     <canvas id="myCanvas" width="1000px" height="400px"></canvas>
 </body>
-<script src="script.js"></script>
+<script>
+    let x = 50;
+    let y = 50;
+    let width = 200;
+    let height = 200;
+    window.onload = function () {
+        paper.setup("myCanvas");
+        for (let i = 0; i < 5; i++) {
+            let rect = new paper.Path.Rectangle(x, y, width, height);
+            rect.fillColor = "violet";
+            rect.strokeColor = "black";
+            height /= 2;
+            width /= 2;
+            y = y + height / 2;
+            x = x + width * 2 ;
+        }
+    };
+    </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.17/paper-full.min.js"
     integrity="sha512-NApOOz1j2Dz1PKsIvg1hrXLzDFd62+J0qOPIhm8wueAnk4fQdSclq6XvfzvejDs6zibSoDC+ipl1dC66m+EoSQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-</html>
+</html>   

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan App</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #AppBody {
+        border: 1px solid black;
+        /* height: 80vh; */
+        width: 60vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #AppDisplay {
+        /* border: 1px solid black; */
+        /* height: 95%; */
+        width: 95%;
+    }
+
+    #LoanDetails {
+        /* height: 30%; */
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #LoanDetails input,
+    button,
+    #intrest {
+        width: 40%;
+        /* height: 1.7em; */
+        ;
+    }
+
+    #loanDetails {
+        border: 1px solid black;
+        /* height: 80%; */
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div id="AppBody">
+        <div id="AppDisplay">
+            <form id="LoanDetails">
+                <input id="amountOfLoan" type="number" placeholder="Enter The Amount Of Loan" min="10000">
+                <input id="yearsOfInstalments" type="number" placeholder="Enter The Number Of Years" min="1" max="2">
+                <select id="intrest">
+                    <option value="intrestAmount">Enter the intrest Amount</option>
+                    <option value="tenPer">10%</option>
+                    <option value="fifteenPer">15%</option>
+                </select>
+                <button id="submitButton">Submit For Loan</button>
+            </form>
+            <table id="loanDetails">
+                <tr><th>Payable Amount</th>
+                    <th>Instalment Per Month</th>
+                <th>Next Due Date</th></tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        let loanForms = {
+        }
+        $("#LoanDetails").on("submit", function (evt) {
+            loanForms.amount = amountOfLoan.value;
+            loanForms.years = yearsOfInstalments.value;
+            loanForms.percentage = intrest.value;
+            if (intrest.value == "intrestAmount") {
+                alert("enter the intrest Percentage");
+                window.refresh()
+            } else if (intrest.value == "tenPer") {
+                loanForms.payable = amountOfLoan.value * 1.1
+            } else if (intrest.value == "fifteenPer") {
+                loanForms.payable = amountOfLoan.value * 1.15
+            }
+
+           
+
+
+
+
+            $('#LoanDetails')[0].reset()
+            evt.preventDefault();
+            let date = new Date();
+            let months = loanForms.years * 12;
+            let instalment = loanForms.payable / months;
+            for (let i = 0; i < (months); i++) {
+                $("#loanDetails").append(`<tr><td>${Math.round(loanForms.payable - (instalment * i))}</td><td>${Math.round(instalment)}</td><td>${add_months(date, 1).toDateString()}</td></tr>`)
+            }
+        })
+        function add_months(dt, n) {
+                return new Date(dt.setMonth(dt.getMonth() + n));
+            }
+
+    </script>
+</body>
+
+</html>

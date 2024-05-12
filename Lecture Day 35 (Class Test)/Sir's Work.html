@@ -1,0 +1,59 @@
+<style>
+    #circle {
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+        position: absolute;
+        border-radius: 50px;
+        top: 90%
+    }
+
+    #square {
+        width: 600px;
+        height: 600px;
+        border: 1px solid red;
+        position: relative;
+    }
+</style>
+<div id="square">
+
+    <div id="circle"></div>
+
+</div>
+<script>
+    let directionX = 'right';
+    let directionY = 'top';
+
+
+    setInterval(() => {
+
+        if (directionX == 'right') {
+            circle.style.left = (circle.offsetLeft + 1) + 'px'
+        } else if (directionX == 'left') {
+            circle.style.left = (circle.offsetLeft - 1) + 'px'
+        }
+
+        if (directionY == 'top') {
+            circle.style.top = (circle.offsetTop - 2) + 'px'
+        } else if (directionY == 'bottom') {
+            circle.style.top = (circle.offsetTop + 2) + 'px'
+        }
+
+        if (circle.offsetTop <= 0) {
+            directionY = 'bottom'
+        }
+
+        if ((circle.offsetTop + circle.offsetHeight) > (square.offsetLeft + square.offsetHeight)) {
+            directionY = '';
+            directionX = 'left'
+        }
+
+        if (circle.offsetLeft <= 0) {
+            directionY = 'top';
+            directionX = 'right'
+        }
+
+
+    }, 0);
+
+</script>

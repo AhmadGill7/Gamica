@@ -1,0 +1,4 @@
+create a simple loan application
+User will add bank loan and number of installments
+after that a table will created with each row respreseting the next date of installment and payble amount
+user will select the rate of interest as well

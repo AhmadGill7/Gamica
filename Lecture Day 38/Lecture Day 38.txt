@@ -1,0 +1,6 @@
+Lecture Day 38
+
+On Lecture Day 38 we have practiced more concepts of React then before 
+we have made a multi page website by using routers(BrowserRouters, Routes, and route).
+plus ive maded my first login page and signup page on this day.
+it was easy and fun

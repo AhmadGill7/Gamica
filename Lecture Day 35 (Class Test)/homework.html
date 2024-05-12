@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Mega Huge Project xD</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+    #appBody {
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ball {
+        position: absolute;
+        box-sizing: border-box;
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        left: 9px;
+        border-radius: 80px;
+        border: 2px solid black;
+    }
+
+    #gameBody {
+        position: relative;
+
+        box-sizing: border-box;
+        width: 1002px;
+        height: 600px;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+    }
+
+    .pixels {
+        /* border: 1px solid aqua; */
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+    }
+
+    .leftToRight {
+        border-top: 2px solid red;
+        border-bottom: 2px solid red;
+
+    }
+
+    .topRightEdge {
+        border-top: 2px solid red;
+        border-right: 2px solid red;
+    }
+
+    .topToBottom {
+        border-right: 2px solid red;
+        border-left: 2px solid red;
+    }
+
+    .bottomLeftEdge {
+        border-left: 2px solid red;
+        border-bottom: 2px solid red;
+
+    }
+</style>
+
+<body>
+    <div id="appBody">
+
+        <div id="gameBody">
+            <div id="ball"></div>
+            <div id="box1" class=" pixels leftToRight">1</div>
+            <div id="box2" class="pixels leftToRight">2</div>
+            <div id="box3" class="pixels leftToRight">3</div>
+            <div id="box4" class="pixels leftToRight">4</div>
+            <div id="box5" class=" pixels leftToRight">5</div>
+            <div id="box6" class="pixels leftToRight">6</div>
+            <div id="box7" class="pixels topRightEdge">7</div>
+            <div id="box8" class="pixels">8</div>
+            <div id="box9" class="pixels">9</div>
+            <div id="box10" class="pixels">10</div>
+            <div id="box11" class="pixels">11</div>
+            <div id="box12" class="pixels">12</div>
+            <div id="box13" class="pixels">13</div>
+            <div id="box14" class="pixels ">14</div>
+            <div id="box15" class="pixels">15</div>
+            <div id="box16" class="pixels">16</div>
+            <div id="box17" class="pixels topToBottom">17</div>
+            <div id="box18" class="pixels">18</div>
+            <div id="box19" class="pixels">19</div>
+            <div id="box20" class="pixels">20</div>
+            <div id="box21" class="pixels">21</div>
+            <div id="box22" class="pixels">22</div>
+            <div id="box23" class="pixels">23</div>
+            <div id="box24" class="pixels ">24</div>
+            <div id="box25" class="pixels">25</div>
+            <div id="box26" class="pixels">26</div>
+            <div id="box27" class="pixels topToBottom">27</div>
+            <div id="box28" class="pixels">28</div>
+            <div id="box29" class="pixels">29</div>
+            <div id="box30" class="pixels">30</div>
+            <div id="box31" class="pixels">31</div>
+            <div id="box32" class="pixels">32</div>
+            <div id="box33" class="pixels">33</div>
+            <div id="box34" class="pixels ">34</div>
+            <div id="box35" class="pixels ">35</div>
+            <div id="box36" class="pixels ">36</div>
+            <div id="box37" class="pixels topToBottom">37</div>
+            <div id="box38" class="pixels ">38</div>
+            <div id="box39" class="pixels">39</div>
+            <div id="box40" class="pixels">40</div>
+            <div id="box41" class="pixels">41</div>
+            <div id="box42" class="pixels">42</div>
+            <div id="box43" class="pixels">43</div>
+            <div id="box44" class="pixels ">44</div>
+            <div id="box45" class="pixels ">45</div>
+            <div id="box46" class="pixels ">46</div>
+            <div id="box47" class="pixels bottomLeftEdge">47</div>
+            <div id="box48" class="pixels topRightEdge">48</div>
+            <div id="box49" class="pixels">49</div>
+            <div id="box50" class="pixels">50</div>
+            <div id="box51" class="pixels">51</div>
+            <div id="box52" class="pixels">52</div>
+            <div id="box53" class="pixels">53</div>
+            <div id="box54" class="pixels">54</div>
+            <div id="box55" class="pixels">55</div>
+            <div id="box56" class="pixels">56</div>
+            <div id="box57" class="pixels">57</div>
+            <div id="box58" class="pixels bottomLeftEdge">58</div>
+            <div id="box59" class="pixels leftToRight">59</div>
+            <div id="box60" class="pixels leftToRight">60</div>
+        </div>
+    </div>
+</body>
+<script>
+
+    let direction = "";
+
+    setInterval(function () {
+    let ball = document.getElementById("ball");
+    let ballRect = ball.getBoundingClientRect();
+    let ballLeft = ballRect.left;
+    let ballTop = ballRect.top;
+    let radius = ball.offsetWidth/2
+    // console.log(radius)
+
+    let leftBorder = document.elementFromPoint(ballLeft - 1, ballTop );
+    let rightBorder = document.elementFromPoint(ballLeft + ball.offsetWidth + 1, ballTop);
+    let topBorder = document.elementFromPoint(ballLeft, ballTop - 1);
+    let bottomBorder = document.elementFromPoint(ballLeft,  ballTop + ball.offsetHeight + 1);
+
+    if (((leftBorder + radius) + (ball.offsetWidth / 2)) && leftBorder.classList.contains("s")) {
+        direction = "left";
+    } else if (((rightBorder + radius) + (ball.offsetWidth / 2)) && (rightBorder.classList.contains("leftToRight") || rightBorder.classList.contains("bottomLeftEdge"))) {
+        direction = "right";
+    } else if (((topBorder+ radius) + (ball.offsetWidth / 2)) && topBorder.classList.contains("s")) {
+        direction = "top";
+    } else if ((bottomBorder.classList.contains("topToBottom") || bottomBorder.classList.contains("topRightEdge"))) {
+        direction = "bottom";
+    }
+
+        if (direction === "right") {
+
+            ball.style.left = ball.offsetLeft + 1 + "px";
+        } else if (direction === "left") {
+            ball.style.left = ball.offsetLeft - 1 + "px";
+        } else if (direction === "top") {
+            ball.style.top = ball.offsetTop - 1 + "px";
+        } else if (direction === "bottom") {
+            ball.style.top = ball.offsetTop + 1 + "px";
+        }
+    }, 10);
+
+
+
+
+</script>
+
+</html>

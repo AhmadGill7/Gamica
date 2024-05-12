@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Number 2</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    #mainBox {
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 700px;
+        height: 400px;
+        border: 1px solid black;
+        display: flex;
+    }
+    .innerBox:first-child{
+        position: relative;
+        flex-grow: 1.5;
+        display: flex;
+        flex-direction: column;
+    }
+    .innerBox:last-child{
+        flex-grow: 7;
+    }
+    .innerBox{
+        border: 1px solid black;
+    }
+    #rect{
+        width: 80px;
+        height:80px;
+        border: 1px solid black;
+        /* position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 10px; */
+        background-color: aqua;
+    }
+</style>
+
+<body>
+    <div id="mainBox">
+        <div class="innerBox">
+            <div id="rect"></div>
+        </div>
+        <div class="innerBox"></div>
+    </div>
+
+
+</body>
+
+</html>

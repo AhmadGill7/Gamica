@@ -1,0 +1,21 @@
+.loginContainer {
+  /* border: 1px   solid #FFF5EA; */
+  width: 100% !important;
+  border-radius: 1em;
+}
+label {
+  color: black;
+}
+.white {
+  color: #ffffff;
+  margin-left: 0.5em;
+}
+.form{
+  width: 30%;
+}
+.form-floating>.form-control:not(:placeholder-shown)~label{
+  color: black;
+}
+.form-floating>.form-control:not(:placeholder-shown)~label{
+  color: black;
+}
