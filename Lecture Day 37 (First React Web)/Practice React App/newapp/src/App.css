@@ -1,17 +1,68 @@
 .App {
-  background: #0C0C0C;
-  color: #FFF5EA;
-
+  background: #0c0c0c;
+  color: #fff5ea;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
   text-align: center;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
+.error {
+  color: red;
+  font-size: larger;
+  font-style: italic;
+  word-spacing: 5px;
+  letter-spacing: 2.5px;
+}
+.mainCard {
+  background: #0c0c0c;
+  box-shadow: 12px 10px 20px #fff5ea;
+  color: #fff5ea;
+  height: 15rem;
+}
+.mainCard:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: 500ms ease;
+}
+#imageContainer {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
 
+#imageOnCard {
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+}
+
+.lineGap {
+  line-height: 50px;
+  letter-spacing: 5.5px;
+}
+ol,
+li {
+  color: black !important;
+}
+
+footer,
+.App,
+.mb-3,
+.bg-body-tertiary,
+.btn,
+.form-label,
+.nav-link,
+.darkTheme {
+  color: #fff5ea !important;
+  background: black !important;
+}
 main {
   flex: 1 0 auto;
 }
-.flex{
+.flex {
   display: flex;
   justify-content: space-around;
 }
@@ -35,10 +86,6 @@ main {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {

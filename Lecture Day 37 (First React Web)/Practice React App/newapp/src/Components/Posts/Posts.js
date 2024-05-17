@@ -19,7 +19,7 @@ export default ({ data, setData }) => {
                         boxShadow: "0px 0px 10px Red", borderRadius: "50px",
                         padding: "0.7rem"
                     }}>
-                        {post.Company}
+                        {post.Title}
                     </h4>
                     </td>
                     <td ><button onClick={removeAd} style={{ boxShadow: "0px 0px 10px Red",borderRadius: "15px" ,padding: "0.6rem" }} className="btn btn-lg btn-primary btn-outline-primary">Delete</button></td>

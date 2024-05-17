@@ -1,66 +1,73 @@
 import { useRef } from "react";
 import "./login.css";
 import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+export function Login({ User, currentUser, setCurrentUser }) {
 
-export function Login({ User }) {
-  let emailRef = useRef();
-  let PasswordRef = useRef();
+  const navigate = useNavigate()
+  let toSignup;
+  let { register, handleSubmit, formState: { errors } } = useForm()
 
-  let loginCheck = (evt) => {
-    evt.preventDefault();
-    let LoginUser = {
-      Email: emailRef.current.value,
-      Password: PasswordRef.current.value,
-    };
-    console.log(emailRef.current.value, PasswordRef.current.value);
-    User.map((account) => {
-      if (
-        account.Email == LoginUser.Email &&
-        account.Password == LoginUser.Password
-      ) {
-        document.getElementById("form").reset();
-        alert("user Milgaya");
+  let loginCheck = (details) => {
+    let Email = details.Email;
+    let UserName = details.Email;
+    let Password = details.Password;
+    let UserFound = User.some((account) => {
+      if (account.Email == Email || account.UserName == UserName && account.Password == Password) {
+        setCurrentUser(account)
+        return true;
+
       }
-    });
+    }
+    )
+
+
+    if (UserFound) {
+      document.getElementById("form").reset();
+      navigate("/")
+      toast.success("Login Successfully");
+    } else {
+      toast.error("Email Not Registerd")
+      toSignup = window.confirm("Want To Create an Account?")
+    };
+    if (toSignup) {
+      navigate("/signup")
+    }
   };
 
   return (
     <div className='loginContainer form-signin w-100 m-auto d-flex align-items-center justify-content-center py-4 bg-body-tertiary'>
-      <form id='form' onSubmit={loginCheck} className='form'>
-        <img className='mb-4' src='Logo.jpg' alt='' width={72} height={57} />
+      <form id='form' onSubmit={handleSubmit(loginCheck)} className='form'>
+        <img className='mb-4' src='Dark Logo.png' alt='' style={{ mixBlendMode: "lighten", }} width={80} height={70} />
         <h1 className='h3 mb-3 fw-normal'>Please Sign In</h1>
         <div className='form-floating'>
           <input
-            ref={emailRef}
-            type='email'
-            className='form-control form-control-lg'
+            {...register("Email", { required: true, })}
+            type='text'
+            className='form-control form-control-sm'
             id='floatingInput'
             placeholder='name@example.com'
           />
-          <label htmlFor='floatingInput'>Email address</label>
+          <label htmlFor='floatingInput'>Email address Or User Name</label>
+          {errors.Email && errors.Email.type == "required" ? <div className="error">ANNI DEYA MAZAK AY</div> : null}
         </div>
         <div className='form-floating my-2'>
           <input
-            ref={PasswordRef}
+            {...register("Password", { required: true, minLength: 4, maxLength: 10 })}
             type='password'
             className='form-control form-control-lg'
             id='LoginfloatingPassword'
             placeholder='Password'
           />
           <label htmlFor='LoginfloatingPassword'>Password</label>
-        </div>
-        {/* <div className="form-check text-start my-3">
-                <input
-                    className="form-check-input"
-                    type="checkbox"
-                    defaultValue="remember-me"
-                    id="flexCheckDefault"
+          {errors.Password && errors.Password.type == "required" ? <div className="error">ANNI DEYA MAZAK AY</div> : null}
+          {errors.Password && errors.Password.type == "minLength" ? <div className="error">THORA JEYA HOR LIKH</div> : null}
+          {errors.Password && errors.Password.type == "maxLength" ? <div className="error">AINA V NI LIKHNA</div> : null}
 
-                />
-                <label className="form-check-label white" htmlFor="flexCheckDefault">
-                    Remember me
-                </label>
-            </div> */}
+        </div>
         <button className='my-3 btn btn-primary w-100 py-2' type='submit'>
           Sign in
         </button>

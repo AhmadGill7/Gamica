@@ -1,0 +1,5 @@
+Lecture Day 41
+
+Todays Lecture is about Login and Signup and there errors and handlings and how to throw manual errors, 
+
+the more i am learning the more i think it is not even close to complete

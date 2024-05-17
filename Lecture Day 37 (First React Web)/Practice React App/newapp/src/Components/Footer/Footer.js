@@ -1,14 +1,8 @@
-import "./Footer.css"
-export function Footer(){
-    return <footer className="d-flex flex-wrap justify-content-between align-items-center  mx-3 p-3 border-top">
+export function Footer() {
+  return <footer className="d-flex flex-wrap justify-content-between align-items-center  mx-3 p-3 border-top">
     <div className="col-md-4 d-flex align-items-center">
-      <a
-        href="/"
-        className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
-      >
-        <svg className="bi" width={30} height={24}>
-          <use xlinkHref="#bootstrap" />
-        </svg>
+      <a href="/" className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <img src='Dark Logo.png' alt='' style={{ mixBlendMode: "lighten" }} width={35} height={25}/>
       </a>
       <span className="mb-3 mb-md-0 text-body-secondary">
         © 2024 Company, Inc
@@ -38,6 +32,6 @@ export function Footer(){
       </li>
     </ul>
   </footer>
-  
-  
+
+
 }
