@@ -7,10 +7,8 @@ import axios from "axios";
 
 
 
-export default () => {
+export const Signup = ({ count, setCount, User }) => {
 
-    const [countryid, setCountryid] = useState(0);
-    const [stateid, setstateid] = useState(0);
     let toPage = useNavigate();
     let {
         register,
@@ -21,53 +19,56 @@ export default () => {
     const [UserNameRegistered, setUserNameRegistered] = useState(false);
 
     function createAccount(details) {
-        const isEmailRegistered = User.some(
-            (account) => account.Email === details.Email
-        );
-        const isUserNameRegistered = User.some(
-            (account) => account.UserName === details.UserName
-        );
-        if (isEmailRegistered) {
-            setEmailRegistered(true);
-            toast.error("Email Already Registered");
-        } else if (isUserNameRegistered) {
-            setUserNameRegistered(true);
-            toast.error("UserName Already Registered");
+        // const isEmailRegistered = User.some(
+        //     (account) => account.Email === details.Email
+        // );
+        // const isUserNameRegistered = User.some(
+        //     (account) => account.UserName === details.UserName
+        // );
+        // if (isEmailRegistered) {
+        //     setEmailRegistered(true);
+        //     toast.error("Email Already Registered");
+        // } else if (isUserNameRegistered) {
+        //     setUserNameRegistered(true);
+        //     toast.error("UserName Already Registered");
 
-        } else if (details.Password === details.newPasswordConfirm) {
-            let newUser = {
-                FullName: details.FullName,
-                UserName: details.UserName,
-                Email: details.Email,
-                Password: details.Password,
-                City: details.CitySelector,
-            };
-            // User.push(newUser);
-            axios.post("/signup", newUser)
-            // toPage("/login");
-            toast.success("Account Created Successfully");
-            // document.getElementById("form").reset();
-            setEmailRegistered(false);
-            setUserNameRegistered(false);
-        } else {
-            alert("Passwords Don't Match");
-        }
+        // } else if (details.Password === details.newPasswordConfirm) {
+        // let newUser = {
+        //     FullName: details.FullName,
+        //     UserName: details.UserName,
+        //     Email: details.Email,
+        //     Password: details.Password,
+        //     City: details.CitySelector,
+        // };
+        // // User.push(newUser);
+        // axios.post("/signup", newUser)
+        // toPage("/login");
+        // toast.success("Account Created Successfully");
+        // document.getElementById("form").reset();
+        //     setEmailRegistered(false);
+        //     setUserNameRegistered(false);
+        // } else {
+        //     alert("Passwords Don't Match");
+        // }
+
+        const newUser = {
+            // FullName: details.FullName,
+            UserName: details.UserName,
+            // Email: details.Email,
+            Password: details.Password,
+            // City: details.CitySelector,
+        };
+        axios.post("/signup", newUser);
+        setCount(count*1.1)
+        toast.success("Account Created Successfully");
+        toPage("/login");
     }
 
     return <div className='loginContainer form-signin w-100 m-auto d-flex align-items-center justify-content-center bg-body-tertiary'>
         <form id='form' className='form' onSubmit={handleSubmit(createAccount)}>
-            <img
-                className='mb-4'
-                src='Dark Logo.png'
-                alt=''
-                style={{ mixBlendMode: "lighten" }}
-                width={80}
-                height={70}
-            />
+            <img className='mb-4' src='Logo.png' alt='' style={{ mixBlendMode: "darken", }} width={80} height={70} />
             <h1 className='h3 fw-normal'>Please Sign Up</h1>
-
-
-            {/* Full Name  */}
+            {/* Full Name 
             <div className='form-floating my-2'>
                 <input
                     {...register("FullName", { required: true })}
@@ -80,7 +81,7 @@ export default () => {
                 {errors.FullName ? (
                     <div className='error'>ANNI DEYA MAZAK AY</div>
                 ) : null}
-            </div>
+            </div> */}
 
             {/* UserName  */}
             <div className='form-floating my-2'>
@@ -99,7 +100,7 @@ export default () => {
 
 
             {/* Email  */}
-            <div className='form-floating'>
+            {/* <div className='form-floating'>
                 <input
                     {...register("Email", { required: true })}
                     type='email'
@@ -111,7 +112,7 @@ export default () => {
                 {errors.Email ? (
                     <div className='error'>ANNI DEYA MAZAK AY</div>
                 ) : null}
-            </div>
+            </div> */}
 
             {/* Password  */}
 
@@ -169,7 +170,7 @@ export default () => {
             </div>
 
             {/* City  */}
-            <select className="form-select form-select-lg" {...register("CitySelector", {
+            {/* <select className="form-select form-select-lg" {...register("CitySelector", {
                 required: true, validate: ((value) => {
                     if (value == "Enter Your City") {
                         return false;
@@ -192,7 +193,7 @@ export default () => {
             {errors.CitySelector &&
                 errors.CitySelector.type == "validate" ? (
                 <div className='error'>Please Enter a City</div>
-            ) : null}
+            ) : null} */}
             <button className='btn my-3 btn-primary w-100 py-2' type='submit'>
                 Sign Up
             </button>

@@ -1,4 +1,4 @@
-
+/* 
 label {
   color: black;
 }
@@ -14,4 +14,4 @@ label {
 }
 .form-floating>.form-control:not(:placeholder-shown)~label{
   color: black;
-}
+} */

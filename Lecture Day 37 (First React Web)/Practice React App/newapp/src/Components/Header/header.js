@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ToogleMenu from "../Welcome/Toogle Bars/ToogleMenu";
 export function Header({ currentUser, setCurrentUser }) {
   return (
     <nav className='navbar navbar-expand-lg bg-body-tertiary'>
@@ -19,13 +18,18 @@ export function Header({ currentUser, setCurrentUser }) {
           aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon' />
         </button>
-        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+        <div className='collapse  navbar-collapse' id='navbarSupportedContent'>
           {currentUser.UserName || currentUser.Email ? (
             <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-              
+
               <li className='nav-item'>
                 <Link to='/profile' className='nav-link' href='#'>
                   Profile
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link to='/showusers' className='nav-link' href='#'>
+                  Show Users
                 </Link>
               </li>
 
@@ -41,17 +45,17 @@ export function Header({ currentUser, setCurrentUser }) {
               </li>
             </ul>
           ) : null}
-          <ul>
+          <ul className='navbar-nav float-end me-auto mb-2 mb-lg-0'>
             {currentUser.UserName || currentUser.Email ? (
               <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-                <li className='nav-item'>
-                  <Link to='' className='nav-link' aria-disabled='true'>
-                    Logout
-                  </Link>
+                <li class="nav-item darkTheme">
+                  <Link to="/login" onClick={() => {
+                    setCurrentUser({})
+                  }} class="nav-link  darkTheme active" aria-current="page" href="#">Logout</Link>
                 </li>
               </ul>
             ) : (
-              <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+              <ul className='navbar-nav  me-auto mb-2 mb-lg-0'>
                 <li className='nav-item'>
                   <Link to='/login' className='nav-link' aria-disabled='true'>
                     Login
@@ -103,11 +107,11 @@ export function Header({ currentUser, setCurrentUser }) {
   //             </li>
   //           </>
   //             :
-  //             <li class="nav-item darkTheme">
-  //               <Link to="/login" onClick={() => {
-  //                 setCurrentUser({})
-  //               }} class="nav-link darkTheme active" aria-current="page" href="#">Logout</Link>
-  //             </li>
+  // <li class="nav-item darkTheme">
+  //   <Link to="/login" onClick={() => {
+  //     setCurrentUser({})
+  //   }} class="nav-link darkTheme active" aria-current="page" href="#">Logout</Link>
+  // </li>
   //           }
   //         </ul>
   //       </div>

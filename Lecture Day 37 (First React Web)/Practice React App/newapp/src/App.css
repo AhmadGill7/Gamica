@@ -1,7 +1,17 @@
-.App {
-  background: #0c0c0c;
-  color: #fff5ea;
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
   font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+.navbar {
+  padding: 0;
+}
+svg{
+  fill: black;
+}
+.App {
   text-align: center;
   display: flex;
   min-height: 100vh;
@@ -13,12 +23,6 @@
   font-style: italic;
   word-spacing: 5px;
   letter-spacing: 2.5px;
-}
-.mainCard {
-  background: #0c0c0c;
-  box-shadow: 12px 10px 20px #fff5ea;
-  color: #fff5ea;
-  height: 15rem;
 }
 .mainCard:hover {
   cursor: pointer;
@@ -43,29 +47,6 @@
   line-height: 50px;
   letter-spacing: 5.5px;
 }
-ol,
-li {
-  color: black !important;
-}
-
-footer,
-.App,
-.mb-3,
-.bg-body-tertiary,
-.btn,
-.form-label,
-.nav-link,
-.darkTheme {
-  color: #fff5ea !important;
-  background: black !important;
-}
-main {
-  flex: 1 0 auto;
-}
-.flex {
-  display: flex;
-  justify-content: space-around;
-}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -75,17 +56,6 @@ main {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 @keyframes App-logo-spin {

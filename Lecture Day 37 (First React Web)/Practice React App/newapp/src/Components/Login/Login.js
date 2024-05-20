@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
-export function Login({ User, currentUser, setCurrentUser }) {
-
+export function Login({ User, setIndex, setCurrentUser }) {
   const navigate = useNavigate()
   let toSignup;
   let { register, handleSubmit, formState: { errors } } = useForm()
@@ -15,15 +14,15 @@ export function Login({ User, currentUser, setCurrentUser }) {
     let Email = details.Email;
     let UserName = details.Email;
     let Password = details.Password;
-    let UserFound = User.some((account) => {
-      if (account.Email == Email || account.UserName == UserName && account.Password == Password) {
-        setCurrentUser(account)
+
+    let UserFound = User.some((account, index) => {
+      if (account.newUser.Email == Email || account.newUser.UserName == UserName && account.newUser.Password == Password) {
+        setIndex(index)
+        setCurrentUser(details)
         return true;
-
       }
-    }
-    )
-
+      return false;
+    })
 
     if (UserFound) {
       document.getElementById("form").reset();
@@ -39,9 +38,9 @@ export function Login({ User, currentUser, setCurrentUser }) {
   };
 
   return (
-    <div className='loginContainer form-signin w-100 m-auto d-flex align-items-center justify-content-center py-4 bg-body-tertiary'>
+    <div className='loginContainer  form-signin w-100 m-auto d-flex align-items-center justify-content-center py-4 bg-body-tertiary'>
       <form id='form' onSubmit={handleSubmit(loginCheck)} className='form'>
-        <img className='mb-4' src='Dark Logo.png' alt='' style={{ mixBlendMode: "lighten", }} width={80} height={70} />
+        <img className='mb-4' src='Logo.png' alt='' style={{ mixBlendMode: "darken", }} width={80} height={70} />
         <h1 className='h3 mb-3 fw-normal'>Please Sign In</h1>
         <div className='form-floating'>
           <input

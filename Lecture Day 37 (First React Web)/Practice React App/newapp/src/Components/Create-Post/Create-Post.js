@@ -1,6 +1,7 @@
+import axios from "axios"
 import { useRef } from "react"
 
-export default ({ data }) => {
+export default ({data}) => {
     let BrandNameRef = useRef()
     let srcRef = useRef()
 
@@ -15,7 +16,8 @@ export default ({ data }) => {
         document.getElementById("form").reset()
     }
 
-    return <form id="form" style={{ height: "60svh" }} onSubmit={postAd}>
+return <>
+    <form id="form" style={{ height: "60svh" }} onSubmit={postAd}>
         <div className=" d-flex justify-content-around flex-column  m-auto" style={{ height: "100%" }}>
             <div>
                 <h1 className="mb-3">Wants to Create a New Post ?</h1>
@@ -33,4 +35,5 @@ export default ({ data }) => {
 
         </div >
     </form>
+</>
 }
