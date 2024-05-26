@@ -1,3 +1,5 @@
 Lecture Day 43
+we are doing redux today and we will look a little into backend
+
 
 we have started Backend

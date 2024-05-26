@@ -1,0 +1,3 @@
+Lecture Day 46
+
+Today we have studdied session managment through jsonWebToken

@@ -10,7 +10,7 @@
   let v =b.substr(0, 5);
   alert(v);
 </script> -->
-
+<!-- 
 <script>
   let money = prompt("How Much Money Do You have");
 
@@ -31,4 +31,43 @@
     menu = "Allah Pala Kry Tera v Ty Mera v";
   }
   alert(menu);
-</script>
+</script> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #mainBox{
+    display: flex;
+    flex-wrap: wrap;
+
+    height: 400px;
+    width: 400px;
+    background-color: orange;
+  }
+  .childDiv{
+    margin-bottom: 3px;
+    margin-left: 3px;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+  }
+</style>
+<body>
+  <div id="mainBox">
+
+  </div>
+  <script>
+    let mainbox = document.getElementById("mainBox")
+
+    for(let i = 0 ; i<10; i++){
+      let childDiv = document.createElement("div")
+      childDiv.classList.add("childDiv")
+      mainbox.append(childDiv)
+    }
+  </script>
+</body>
+</html/>

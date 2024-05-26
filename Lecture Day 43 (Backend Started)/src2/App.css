@@ -1,0 +1,29 @@
+#new2{
+  display: flex;
+}
+
+#meraBox{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
+
+#app{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .error{
+    color:red
+  }
+
+  .flex{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
